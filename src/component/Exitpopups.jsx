@@ -4,7 +4,7 @@ const Exitpopups = () => {
 
     document.onmouseout=(event)=>{
 
-        if(event.screenY<=150){
+        if(event.clientY<=0){
            if(window.campainrules.active){
                 window.campainrules.active=false;
                let main=document.getElementById('root');
