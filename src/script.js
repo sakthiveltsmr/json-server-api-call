@@ -25,21 +25,24 @@ window.campain={
 
 }
 
-function FecthingData(){
-
-    fetch(`http://localhost:3004/popups/${window.campain.app_id}`).then((response)=>{
-        window.campainattribute=response.data
-        Checking()
-        }).catch((error)=>{
-            console.log(error)
-        })
+async function FecthingData (){
+ try {
+    let data=await fetch(`http://localhost:3004/popups/${window.campain.app_id}`);
+   const rules = await data.json()
+   window.campainrules=rules
+   Checking()
+ } catch (error) {
+    console.log(error)
+ }
+   
+  
 }
-
+       
 FecthingData()
 
 function Checking(){
 
-    switch(window.campainattribute.type)
+    switch(window.campainrules.type)
     {
         case "Exitpopups":
             return Exitintent()
@@ -54,13 +57,29 @@ function Checking(){
 function  Exitintent(){
 
     document.onmouseout=(event)=>{
-        if(event.screenY<=200){
-            let main=document.getElementById('root');
-            let  div=document.createElement('div');
-             div.innerHTML=`${window.campainattribute._html}`
 
-             main.appendChild(div)
-             return main
+        if(event.screenY<=150){
+           if(window.campainrules.active){
+                window.campainrules.active=false;
+               let main=document.getElementById('root');
+               let  div=document.createElement('div');
+               div.innerHTML=`${window.campainrules._html}`
+
+
+           div.addEventListener("click",()=>{
+             return div.style.display='none'
+           })    
+
+           
+               main.appendChild(div)
+               setTimeout(()=>{
+                 div.style.display = "none";
+               },5000)
+
+               return main
+            }else{
+                
+            }
 
         }
     }
