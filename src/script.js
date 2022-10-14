@@ -29,6 +29,7 @@ function FecthingData(){
 
     fetch(`http://localhost:3004/popups/${window.campain.app_id}`).then((response)=>{
         window.campainattribute=response.data
+        Checking()
         }).catch((error)=>{
             console.log(error)
         })
@@ -48,7 +49,7 @@ function Checking(){
     }
 }
 
-Checking()
+
 
 function  Exitintent(){
 
