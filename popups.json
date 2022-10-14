@@ -1,0 +1,20 @@
+{
+    "popups":[
+  {
+    "id": 1, 
+    "type": "Exitpopups", 
+    "author": "customer",
+    "domain":"http://localhost:3000/",
+    "_html":"<h2>ExitPopups</h2>"
+  },
+    {
+        "id": 2, 
+        "type": "Wellcomepopups", 
+        "author": "customer",
+        "domain":"http://localhost:3000/",
+        "_html":"<h2>ExitPopups</h2>"
+      }
+  
+    ]
+    
+}
