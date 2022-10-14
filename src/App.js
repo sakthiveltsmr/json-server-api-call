@@ -3,7 +3,7 @@ import Fetching from "./component/Fetching";
 function App() {
    
   return (
-    <><Fetching/></>
+    <>{Fetching()}</>
   );
 }
 

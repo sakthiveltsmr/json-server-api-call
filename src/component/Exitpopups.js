@@ -22,8 +22,6 @@ const Exitpopups = () => {
                },5000)
 
                return main
-            }else{
-                
             }
 
         }

@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react'
 import axios from 'axios';
 import Checking from './Checking';
-const Fetching = async() => {
+const Fetching =() => {
     const fetch=async()=>{
         try {
-            let result=await axios(`http://localhost:3004/popups/${window.campain.app_id}`);
+            let result=await axios.get(`http://localhost:3004/popups/${window.campain.app_id}`);
             console.log(result.data)
              window.campainrules=result.data
-            return <><Checking/></>
+            return Checking()
          } catch (error) {
             console.log(error)
          }
