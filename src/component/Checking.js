@@ -1,14 +1,14 @@
 
-import useStore from '../store'
+// import useStore from '../store'
 import Exitpopups from './Exitpopups'
-const Checking = () => {
- const campain=useStore((state)=>state.campain)
- console.log("read checking popups",campain)
+const Checking = (campaign) => {
+//  const campain=useStore((state)=>state.campain)
+ console.log("read checking popups",campaign)
  
-    switch(campain.type)
+    switch(campaign.type)
     {
         case "Exitpopups":
-            return <Exitpopups/>
+            return Exitpopups(campaign)
             
             default:
                 return null

@@ -1,19 +1,18 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Checking from "./component/Checking";
-import useStore from "./store";
+// import useStore from "./store";
 
 function App() {
-  const setCampain=useStore((state)=>state.setCampain)
+  const[campaign,setCampaign]=useState()
+  // const setCampain=useStore((state)=>state.setCampain)
+  
    
   const fetch=async()=>{
     try {
         let result=await axios.get(`http://localhost:3004/popups/${window.campain.app_id}`);
         console.log(result.data)
-         setCampain(result.data)
-         return <>
-         <Checking/>
-         </>
+        setCampaign(result.data)
      } catch (error) {
         console.log(error)
      }
@@ -22,9 +21,9 @@ function App() {
 useEffect(()=>{
     fetch()
 },[])
- return(
-  <></>
- )
+return (
+<>{Checking(campaign)}</>
+)
 }
 
 export default App;
