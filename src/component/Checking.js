@@ -1,11 +1,11 @@
-import { useEffect } from 'react'
+
 import useStore from '../store'
 import Exitpopups from './Exitpopups'
 const Checking = () => {
- const campaign=useStore((state)=>state.campaign)
- console.log("read checking popups")
- useEffect(()=>{
-    switch(campaign.type)
+ const campain=useStore((state)=>state.campain)
+ console.log("read checking popups",campain)
+ 
+    switch(campain.type)
     {
         case "Exitpopups":
             return <Exitpopups/>
@@ -13,7 +13,7 @@ const Checking = () => {
             default:
                 return null
     }
- },[campaign])
+ 
     
   
 }

@@ -10,7 +10,7 @@ function App() {
     try {
         let result=await axios.get(`http://localhost:3004/popups/${window.campain.app_id}`);
         console.log(result.data)
-        await setCampain(result.data)
+         setCampain(result.data)
          return <Checking/>
      } catch (error) {
         console.log(error)
