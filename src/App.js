@@ -22,6 +22,9 @@ function App() {
 useEffect(()=>{
     fetch()
 },[])
+ return(
+  <></>
+ )
 }
 
 export default App;
