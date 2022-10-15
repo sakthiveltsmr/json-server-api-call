@@ -3,15 +3,15 @@ import { useEffect } from "react";
 import useStore from "../store";
 import Eventexecution from "./Eventexecution";
 const Exitpopups = () => {
-
-  const campaign=useStore((state)=>state.campaign)
+ console.log("entry popups")
+  const campain=useStore((state)=>state.campain)
   const sethtml=useStore((state)=>state.sethtml)
 
   //getting html component according to campaign.types
   const getHtml=async()=>{
     try {
-      if(campaign){
-        const result =await axios.get(`http://localhost:3004/Event/${campaign.event}`)
+      if(campain){
+        const result =await axios.get(`http://localhost:3004/Event/${campain.event}`)
         console.log(result.data)
         sethtml(result.data)
         return Eventexecution()
@@ -26,7 +26,7 @@ const Exitpopups = () => {
      
      getHtml()
      
-  },[])
+  },[campain.event])
 
     
 }
