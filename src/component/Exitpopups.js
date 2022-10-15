@@ -1,31 +1,32 @@
-
-
+import axios from "axios";
+import { useEffect } from "react";
+import useStore from "../store";
+import Eventexecution from "./Eventexecution";
 const Exitpopups = () => {
 
-    document.onmouseout=(event)=>{
+  const campaign=useStore((state)=>state.campaign)
+  const sethtml=useStore((state)=>state.sethtml)
 
-        if(event.clientY<=0){
-           if(window.campainrules.active){
-                window.campainrules.active=false;
-               let main=document.getElementById('root');
-               let  div=document.createElement('div');
-               div.innerHTML=`${window.campainrules._html}`
-
-
-           div.addEventListener("click",()=>{
-             return div.style.display='none'
-           })    
-            
-           main.appendChild(div)
-               setTimeout(()=>{
-                 div.style.display = "none";
-               },5000)
-
-               return main
-            }
-
-        }
+  //getting html component according to campaign.types
+  const getHtml=()=>{
+    try {
+    const result =axios.get(`http://localhost:3004/popups/${campaign.type}`)
+    console.log(result.data)
+    sethtml(result.data)
+    return Eventexecution()
+    } catch (error) {
+      console.log(error)
     }
+    
+  }
+
+  useEffect(()=>{
+     
+     getHtml()
+     
+  },[])
+
+    
 }
 
 export default Exitpopups

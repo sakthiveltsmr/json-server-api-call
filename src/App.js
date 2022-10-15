@@ -1,10 +1,25 @@
-import Fetching from "./component/Fetching";
+import axios from "axios";
+import { useEffect } from "react";
+import Checking from "./component/Checking";
+import useStore from "./store";
 
 function App() {
+  const setCampain=useStore((state)=>state.setCampain)
    
-  return (
-    <>{Fetching()}</>
-  );
+  const fetch=async()=>{
+    try {
+        let result=await axios.get(`http://localhost:3004/popups/${window.campain.app_id}`);
+        console.log(result.data)
+         setCampain(result.data)
+        return Checking()
+     } catch (error) {
+        console.log(error)
+     }
+}
+
+useEffect(()=>{
+    fetch()
+},[])
 }
 
 export default App;
