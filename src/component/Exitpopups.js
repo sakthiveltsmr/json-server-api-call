@@ -8,12 +8,14 @@ const Exitpopups = () => {
   const sethtml=useStore((state)=>state.sethtml)
 
   //getting html component according to campaign.types
-  const getHtml=()=>{
+  const getHtml=async()=>{
     try {
-    const result =axios.get(`http://localhost:3004/popups/${campaign.type}`)
-    console.log(result.data)
-    sethtml(result.data)
-    return Eventexecution()
+      if(campaign){
+        const result =await axios.get(`http://localhost:3004/Event/${campaign.event}`)
+        console.log(result.data)
+        sethtml(result.data)
+        return Eventexecution()
+      }
     } catch (error) {
       console.log(error)
     }
