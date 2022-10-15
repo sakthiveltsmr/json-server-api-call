@@ -3,9 +3,9 @@ import useStore from "../store";
 const Eventexecution = () => {
 
     const html=useStore((state)=>state.html)
-    const campaign=useStore((state)=>state.campaign)
+    const campaign=useStore((state)=>state.campain)
     const setCampain=useStore((state)=>state.setCampain)
-
+   
     document.onmouseout=(event)=>{
         if(event.clientY<=0){
             console.log(event.clientY)

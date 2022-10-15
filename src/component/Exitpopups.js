@@ -1,18 +1,18 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
-// import useStore from "../store";
+import { useEffect } from "react";
+import useStore from "../store";
 import Eventexecution from "./Eventexecution";
-const Exitpopups = (campaign) => {
-  const[html,sethtml]=useState()
+const Exitpopups = () => {
+  
  
-  // const campain=useStore((state)=>state.campain)
-  // const sethtml=useStore((state)=>state.sethtml)
-
+  const campain=useStore((state)=>state.campain)
+  const sethtml=useStore((state)=>state.setHtml)
+  const html=useStore((state)=>state.html)
   //getting html component according to campaign.types
   const getHtml=async()=>{
     try {
-      if(campaign){
-        const result =await axios.get(`http://localhost:3004/Event/${campaign.event}`)
+      if(campain){
+        const result =await axios.get(`http://localhost:3004/Event/${campain.event}`)
         console.log(result.data)
         sethtml(result.data)
       }
@@ -29,7 +29,7 @@ const Exitpopups = (campaign) => {
   },[])
 
   return(
-    <>{Eventexecution(html)}</>
+   html ? <Eventexecution/>:null
   )
  
   

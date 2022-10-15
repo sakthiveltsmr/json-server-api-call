@@ -22,6 +22,7 @@ function App() {
 useEffect(()=>{
     fetch()
 },[])
+
 return (
   campain ? <><Checking campaign={campain}/></>:null
 )
