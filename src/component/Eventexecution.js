@@ -5,9 +5,10 @@ const Eventexecution = () => {
     const html=useStore((state)=>state.html)
     const campaign=useStore((state)=>state.campaign)
     const setCampain=useStore((state)=>state.setCampain)
-    
+
     document.onmouseout=(event)=>{
         if(event.clientY<=0){
+            console.log(event.clientY)
            if(campaign.active){
                setCampain({...campaign,active:false})
                let main=document.getElementById('root');
