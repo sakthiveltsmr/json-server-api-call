@@ -14,7 +14,7 @@ const Exitpopups = () => {
         const result =await axios.get(`http://localhost:3004/Event/${campain.event}`)
         console.log(result.data)
         sethtml(result.data)
-        return Eventexecution()
+        return <Eventexecution/>
       }
     } catch (error) {
       console.log(error)

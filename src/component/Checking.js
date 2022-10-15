@@ -8,7 +8,7 @@ const Checking = () => {
     switch(campaign.type)
     {
         case "Exitpopups":
-            return Exitpopups()
+            return <Exitpopups/>
             
             default:
                 return null
