@@ -18,7 +18,7 @@ const Fetchpopupshtml = () => {
 
       if(campain.event){
 
-        const result =await axios.get(`http://localhost:3004/Event/${campain.event}`)
+        const result =await axios.get(`http://localhost:3004/Event`)
         ///console.log("result.data", result.data)
         // a.push(result.data)
         setHtml(result.data)
