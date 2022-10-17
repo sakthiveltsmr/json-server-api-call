@@ -1,8 +1,12 @@
 import React from 'react'
 
 const Structure = ({html}) => {
+    console.log("in html",html)
   return (
-    <div dangerouslySetInnerHTML={{_html:html}}/>
+    <>
+    <div dangerouslySetInnerHTML={{__html:html}}></div>
+    </>
+    
   )
 }
 
