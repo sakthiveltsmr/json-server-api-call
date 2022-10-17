@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 const Welcome = ({html}) => {
     const[show,setShow]=useState(true)
-  window.onmouseenter=()=>{
+  document.onmouseenter=()=>{
     if(show){
         let main=document.getElementById('root');
         let  div=document.createElement('div');
