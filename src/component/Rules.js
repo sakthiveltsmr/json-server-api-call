@@ -1,6 +1,4 @@
 
-import useStore from '../store'
-import map from "lodash/map"
 import Exitpopups from './Exitpopups'
 const Rules = ({html}) => {
 
