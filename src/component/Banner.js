@@ -13,7 +13,9 @@ const Banner = ({html}) => {
           // div.innerHTML=`${html}`
           // main.appendChild(div)
           setShow(false)
-          return  <Structure html={html}/>
+          return <>
+           <Structure html={html}/>
+          </>
         }
   }
         
