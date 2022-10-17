@@ -7,7 +7,8 @@ const Rules = () => {
  const html=useStore((state)=>state.html)
  const Testcase=(html)=>{
    return map(html,(item,i)=>{
- console.log(item.type,"for rules")
+ console.log(item,"for rules")
+ console.log(item.type,"data")
         
     switch(item.type)
      {
