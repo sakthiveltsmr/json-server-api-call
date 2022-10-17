@@ -1,11 +1,14 @@
 import map from"lodash/map"
-import{Addtocart,Exitpopups,Welcome,Banner}from"./event"
+import Exitpopups from "./Exitpopups"
+import Banner from "./Banner"
+import Welcome from "./Welcome"
+import Addtocart from "./Addtocart"
 const Rules = ({html}) => {
 
   
  const renderCampaignRules=()=>{
 
-   return map(html.events,((item,i)=>{
+   return map(html.events,(item,i)=>{
 
        switch(item.type)
         {
@@ -22,9 +25,9 @@ const Rules = ({html}) => {
              return null
         }
    
-       }))
+       })
         
-             
+       
      }
    
 
