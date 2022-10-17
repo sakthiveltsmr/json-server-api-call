@@ -5,7 +5,7 @@ import Exitpopups from './Exitpopups'
 const Rules = () => {
 
  const html=useStore((state)=>state.html)
- const Testcase=(html)=>{
+ const Testcase=()=>{
    return map(html,(item,i)=>{
  console.log(item,"for rules")
  console.log(item.type,"data")
@@ -24,7 +24,7 @@ const Rules = () => {
                 
   }
   return(
-               html ? <div>{Testcase(html)}</div>:null
+               html ? <div>{Testcase()}</div>:null
     )  
   
 }
