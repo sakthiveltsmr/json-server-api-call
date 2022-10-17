@@ -7,7 +7,7 @@ const Rules = () => {
  const html=useStore((state)=>state.html)
 
  const Testcase=(html)=>{
-    map(html,(item,i)=>{
+   return map(html,(item,i)=>{
         switch(item.type)
      {
          case "Exitpopups":
