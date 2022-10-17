@@ -3,7 +3,7 @@
         {
             "id": 1,
             "type": "Exitpopups",
-            "event_id":1,
+            "event":1,
             "active":true,
             "author": "customer",
             "domain": "http://localhost:3000/"
@@ -12,7 +12,7 @@
         {
             "id": 2,
             "type": "Wellcomepopups",
-            "event_id":2,
+            "event":2,
             "active":true,
             "author": "customer",
             "domain": "http://localhost:3000/"
