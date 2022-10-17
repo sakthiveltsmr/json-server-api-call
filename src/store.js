@@ -1,7 +1,7 @@
 import create from "zustand";
  const useStore=create((set)=>({
     campain:{},
-    html:{},
+    html:[],
     setCampain:(data)=>{
         set({campain:data})
     },

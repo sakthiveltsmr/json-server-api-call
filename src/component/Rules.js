@@ -1,26 +1,28 @@
 
 import useStore from '../store'
-
+import map from "lodash"
 import Exitpopups from './Exitpopups'
 const Rules = () => {
-    
- const campain=useStore((state)=>state.campain)
- console.log("read checking popups",campain)
 
- const Testcase=(campain)=>{
+ const html=useStore((state)=>state.html)
 
-     switch(campain.type)
+ const Testcase=(html)=>{
+    map(html,(item,i)=>{
+        switch(item.type)
      {
          case "Exitpopups":
-             return <Exitpopups/>
+             return <Exitpopups html={item._html}/>
              
              default:
                  return null
      }
+
+    })
+     
                 
   }
   return(
-               campain ? <div>{Testcase(campain)}</div>:null
+               html ? <div>{Testcase(html)}</div>:null
     )  
   
 }

@@ -1,8 +1,7 @@
 import useStore from "../store";
 
-const Exitpopups = () => {
+const Exitpopups = ({html}) => {
 
-    const html=useStore((state)=>state.html)
     const campaign=useStore((state)=>state.campain)
     const setCampain=useStore((state)=>state.setCampain)
    
@@ -13,7 +12,7 @@ const Exitpopups = () => {
                setCampain({...campaign,active:false})
                let main=document.getElementById('root');
                let  div=document.createElement('div');
-               div.innerHTML=`${html._html}`
+               div.innerHTML=`${html}`
                main.appendChild(div)
            const close= document.getElementById('close')
 
