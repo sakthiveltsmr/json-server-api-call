@@ -2,7 +2,6 @@
     "popups": [
         {
             "id": 1,
-            "type": "Exitpopups",
             "event":1,
             "active":true,
             "author": "customer",
@@ -11,7 +10,6 @@
         },
         {
             "id": 2,
-            "type": "Welcomepopups",
             "event":2,
             "active":true,
             "author": "customer",

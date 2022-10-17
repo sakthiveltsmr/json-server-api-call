@@ -7,14 +7,14 @@ export const Addtocart = ({html}) => {
     const Add=()=>{
 
         let Addcart=document.getElementById('addcart')
-
+        
         Addcart.addEventListener("click",()=>{
 
            if(show){
                setShow(false)
        
                let main= document.getElementById('root')
-               
+
                   const data=document.createElement('div')
                   data.innerHTML=(`${html}`)
                  main.appendChild(data)
