@@ -3,36 +3,30 @@ import{Addtocart,Exitpopups,Welcome,Banner}from"./event"
 const Rules = ({html}) => {
 
   
- const CampaignRules=(type)=>{
+ const renderCampaignRules=()=>{
 
-//    const data=html.events.map((item,i)=>{
+   return map(html.events,((item,i)=>{
 
-       switch(type)
+       switch(item.type)
         {
         case "Exitpopups":
-             return Exitpopups
+             return <Exitpopups key={i} html={item._html}/>
         case "Banner":
-            return Banner 
+            return <Banner key={i} html={item._html}/>
         case "Welcomepopups":
-            return Welcome 
+            return <Welcome key={i} html={item._html}/>
         case "Addtocart":
-            return Addtocart
+            return <Addtocart  key={i} html={item._html}/>
                 
         default:
              return null
         }
    
-    //    })
+       }))
         
-        // return data           
+             
      }
-   const renderCampaignRules=()=>{
-    return map(html.event,(item,i)=>{
-        let Campain=CampaignRules()
-        return <Campain key={i} html={item._html}/>
-    })
    
-   }
 
   return(
     <div>
