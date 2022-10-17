@@ -6,24 +6,26 @@ const Rules = ({html}) => {
 
 //  const html=useStore((state)=>state.html)
  const Testcase=()=>{
-   return map(html,(item,i)=>{
-console.log(html,"for html");
- console.log(item,"for rules")
- console.log(i,"data")
-        
-    switch(item.type)
-     {
-     case "Exitpopups":
-          return <Exitpopups key={i} html={item._html}/>
-             
-     default:
-          return null
-     }
-
-    })
-     
+   const data=html.map((item,i)=>{
+    console.log(html,"for html");
+    console.log(item,"for rules")
+    console.log(i,"data")
+           
+       switch(item.type)
+        {
+        case "Exitpopups":
+             return <Exitpopups key={i} html={item._html}/>
                 
-  }
+        default:
+             return null
+        }
+   
+       })
+        
+        return data           
+     }
+   
+
   return(
                html.length!==0 ? <div>{Testcase()}</div>:null
     )  
