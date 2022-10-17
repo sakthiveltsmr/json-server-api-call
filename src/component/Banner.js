@@ -2,7 +2,7 @@
 import Structure from "./structure";
 
 
-const Banner = ({html}) => {
+const Banner = ({html,show}) => {
 //   const[show,setShow]=useState(true)
 //   const Ban=()=>{
 
@@ -21,8 +21,8 @@ const Banner = ({html}) => {
         
     return(
         <>
-       {/* {Ban()} */}
-       <Structure html={html}/>
+      {show?
+       <Structure html={html}/>:null}
         </>
     )
 }

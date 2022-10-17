@@ -31,7 +31,7 @@ const Rules = ({html}) => {
  const renderCampaignRules=()=>{
     return map(html.events,(item,i)=>{
         let CampainRules=CampaignRules(item.type)
-        return <CampainRules key={i} html={item._html}/>
+        return <CampainRules key={i} html={item._html} show={true}/>
     })
  }
   return(
