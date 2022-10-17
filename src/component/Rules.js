@@ -6,31 +6,34 @@ import Addtocart from "./Addtocart"
 const Rules = ({html}) => {
 
   
- const renderCampaignRules=()=>{
+ const CampaignRules=(type)=>{
 
-   return map(html.events,(item,i)=>{
-
-       switch(item.type)
+       switch(type)
         {
         case "Exitpopups":
-             return <Exitpopups key={i} html={item._html}/>
+             return Exitpopups 
         case "Banner":
-            return <Banner key={i} html={item._html}/>
+            return Banner
         case "Welcomepopups":
-            return <Welcome key={i} html={item._html}/>
+            return Welcome 
         case "Addtocart":
-            return <Addtocart  key={i} html={item._html}/>
+            return Addtocart  
                 
         default:
              return null
         }
    
-       })
+    //    })
         
        
      }
    
-
+ const renderCampaignRules=()=>{
+    return map(html.events,(item,i)=>{
+        let CampainRules=CampaignRules(item.type)
+        return <CampainRules key={i} html={item._html}/>
+    })
+ }
   return(
     <div>
         { html.length!==0 ? <div>{renderCampaignRules()}</div>:null}
