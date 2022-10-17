@@ -21,7 +21,7 @@ const Exitpopups = ({html}) => {
         //    close.addEventListener("click",()=>{
         //      return div.style.display='none'
         //    })    
-               return <Structure html={html}/>
+               return Structure (html)
             }
 
         }
