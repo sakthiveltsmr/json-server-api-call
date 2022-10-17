@@ -18,7 +18,7 @@ const Fetchpopupshtml = () => {
       if(campain.event){
 
         const result =await axios.get(`http://localhost:3004/Event/${campain.event}`)
-        console.log("result.data", result.data)
+        ///console.log("result.data", result.data)
         setHtml("setHtml", result.data)
         setLoading(true)
       }
@@ -35,7 +35,9 @@ const Fetchpopupshtml = () => {
   },[])
 
   return(
-   loading ? <Rules html={html}/>:null
+    <>{console.log("1111111111111111111html", html)}
+   {loading ? <Rules html={html}/>:null}
+   </>
   )
  
   
