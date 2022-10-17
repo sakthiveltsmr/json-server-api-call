@@ -1,4 +1,5 @@
 
+import { Addtocart } from './Addtocart'
 import Banner from './Banner'
 import Exitpopups from './Exitpopups'
 import Welcome from './Welcome'
@@ -17,6 +18,8 @@ const Rules = ({html}) => {
             return <Banner key={i} html={item._html}/>
         case "Welcomepopups":
             return <Welcome key={i} html={item._html}/>
+        case "Addtocart":
+            return <Addtocart  key={i} html={item._html}/>
                 
         default:
              return null
