@@ -2,9 +2,9 @@
 import useStore from '../store'
 import map from "lodash/map"
 import Exitpopups from './Exitpopups'
-const Rules = () => {
+const Rules = ({html}) => {
 
- const html=useStore((state)=>state.html)
+//  const html=useStore((state)=>state.html)
  const Testcase=()=>{
    return map(html,(item,i)=>{
 console.log(html,"for html");
@@ -25,7 +25,7 @@ console.log(html,"for html");
                 
   }
   return(
-               html ? <div>{Testcase()}</div>:null
+               html.length!==0 ? <div>{Testcase()}</div>:null
     )  
   
 }
