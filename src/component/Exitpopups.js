@@ -1,7 +1,8 @@
 import useStore from "../store";
 
 const Exitpopups = ({html}) => {
-    
+
+    console.log("in html",html)
     const campaign=useStore((state)=>state.campain)
     const setCampain=useStore((state)=>state.setCampain)
    
