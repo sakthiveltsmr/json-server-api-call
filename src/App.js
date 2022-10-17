@@ -24,7 +24,9 @@ useEffect(()=>{
 },[])
 
 return (
-  campain ? <Fetchpopupshtml/>:null
+  <>{console.log(campain)}
+  {campain ? <Fetchpopupshtml/>:null}
+  </>
 )
 }
 
