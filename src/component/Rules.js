@@ -1,39 +1,44 @@
-
-import { Addtocart } from './Addtocart'
-import Banner from './Banner'
-import Exitpopups from './Exitpopups'
-import Welcome from './Welcome'
+import map from"lodash/map"
+import{Addtocart,Exitpopups,Welcome,Banner}from"./event"
 const Rules = ({html}) => {
 
   
- const Testcase=()=>{
+ const handleCampain=(type)=>{
 
-   const data=html.events.map((item,i)=>{
+//    const data=html.events.map((item,i)=>{
 
-       switch(item.type)
+       switch(type)
         {
         case "Exitpopups":
-             return <Exitpopups key={i} html={item._html}/>
+             return Exitpopups
         case "Banner":
-            return <Banner key={i} html={item._html}/>
+            return Banner
         case "Welcomepopups":
-            return <Welcome key={i} html={item._html}/>
+            return Welcome 
         case "Addtocart":
-            return <Addtocart  key={i} html={item._html}/>
+            return Addtocart
                 
         default:
              return null
         }
    
-       })
+    //    })
         
-        return data           
+        // return data           
      }
    
+const  renderCampaignRules=()=>{
+    return map(html,(item,i)=>{
+        
+        let CampaignRule=handleCampain(item.type)
 
+        return <CampaignRule key={i} html={item._html}/>
+
+    })
+}
   return(
     <div>
-        { html.length!==0 ? <div>{Testcase()}</div>:null}
+        { html.length!==0 ? <div>{renderCampaignRules()}</div>:null}
     
     </div>
               

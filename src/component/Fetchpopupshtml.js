@@ -12,7 +12,7 @@ const Fetchpopupshtml = () => {
   const getHtml=async()=>{
 
     try {
-      // let a =[];
+     
 
       if(campain.event){
 

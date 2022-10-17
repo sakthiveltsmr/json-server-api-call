@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export const Addtocart = ({html}) => {
+ const Addtocart = ({html}) => {
 
     const[show,setShow]=useState(true)
 
@@ -30,7 +30,7 @@ export const Addtocart = ({html}) => {
     <div>{Add()}</div>
   )
 }
-
+export default Addtocart
   
 
 
