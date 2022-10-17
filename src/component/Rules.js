@@ -2,7 +2,9 @@
 import useStore from '../store'
 import map from "lodash/map"
 import Exitpopups from './Exitpopups'
-const Rules = ({html}) => {
+const Rules = (html) => {
+
+    console.log("html1111111111111111", html);
 
 //  const html=useStore((state)=>state.html)
  const Testcase=()=>{
