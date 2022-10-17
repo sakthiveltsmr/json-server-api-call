@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import Structure from "./structure";
+import Structure from "./structure";
 
 
 const Banner = ({html}) => {
@@ -13,7 +13,7 @@ const Banner = ({html}) => {
           // div.innerHTML=`${html}`
           // main.appendChild(div)
           setShow(false)
-          return  <div dangerouslySetInnerHTML={{__html:html}}/>
+          return  <Structure html={html}/>
         }
   }
         
