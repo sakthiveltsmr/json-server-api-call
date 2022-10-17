@@ -1,6 +1,7 @@
 
 import Banner from './Banner'
 import Exitpopups from './Exitpopups'
+import Welcome from './Welcome'
 const Rules = ({html}) => {
 
   
@@ -14,6 +15,8 @@ const Rules = ({html}) => {
              return <Exitpopups key={i} html={item._html}/>
         case "Banner":
             return <Banner key={i} html={item._html}/>
+        case "Welcomepopups":
+            return <Welcome key={i} html={item._html}/>
                 
         default:
              return null
