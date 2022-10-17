@@ -1,8 +1,9 @@
 // import useStore from "../store";
+import { useState } from "react";
 import Structure from "./structure";
 
 const Exitpopups = ({html}) => {
-
+ const[show,setShow]=useState(false)
     console.log("in html",html)
     // const campaign=useStore((state)=>state.campain)
     // const setCampain=useStore((state)=>state.setCampain)
@@ -10,7 +11,7 @@ const Exitpopups = ({html}) => {
     document.onmouseout=(event)=>{
         if(event.clientY<=0){
             console.log(event.clientY)
-          return <Structure html={html}/>
+          return setShow(true)
             //    setCampain({...campaign,active:false})
 //                let main=document.getElementById('root');
 //                let  div=document.createElement('div');
@@ -27,6 +28,9 @@ const Exitpopups = ({html}) => {
 
         }
     }
+    return(
+        <>{show?<Structure html={html}/>:null}</>
+    )
  
 }
 
