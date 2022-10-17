@@ -6,7 +6,7 @@ const Rules = ({html}) => {
 
 //  const html=useStore((state)=>state.html)
  const Testcase=()=>{
-   const data=html.map((item,i)=>{
+   const data=html.events.map((item,i)=>{
     // console.log(html,"for html");
     // console.log(item,"for rules")
     // console.log(i,"data")
