@@ -4,8 +4,8 @@ import Fetchpopupshtml from "./component/Fetchpopupshtml";
 import useStore from "./store";
 
 function App() {
-  
-  const [loading,setLoading]=useState(false)
+
+  const [loading,setLoading]=useState(true)
   
   const setCampain=useStore((state)=>state.setCampain)
 
@@ -15,7 +15,7 @@ function App() {
         let result=await axios.get(`http://localhost:3004/popups/${window.campain.app_id}`);
         console.log(result.data)
         setCampain(result.data)
-        setLoading(true)
+        setLoading(false)
      } catch (error) {
         console.log(error)
      }
@@ -27,7 +27,7 @@ useEffect(()=>{
 
 return (
   <>
-  {loading ? <Fetchpopupshtml/>:null}
+  {!loading ? <Fetchpopupshtml/>:null}
   </>
 )
 }

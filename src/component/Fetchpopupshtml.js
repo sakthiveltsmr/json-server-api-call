@@ -2,15 +2,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import useStore from "../store";
 import Rules from "./Rules"
-// import Eventexecution from "./Eventexecution";
-const Fetchpopupshtml = () => {
-  const [html,setHtml]=useState([])
-  const [loading,setLoading]=useState(false)
-  const campain=useStore((state)=>state.campain)
-  // const sethtml=useStore((state)=>state.setHtml)
- 
 
-  //getting html component according to campaign.types
+const Fetchpopupshtml = () => {
+
+  const [html,setHtml]=useState([])
+  const [loading,setLoading]=useState(true)
+  const campain=useStore((state)=>state.campain)
+ 
   const getHtml=async()=>{
 
     try {
@@ -21,7 +19,7 @@ const Fetchpopupshtml = () => {
         const result =await axios.get(`http://localhost:3004/Event/${campain.event}`)
         
         setHtml(result.data)
-        setLoading(true)
+        setLoading(false)
       }
     } catch (error) {
       console.log(error)
@@ -37,7 +35,7 @@ const Fetchpopupshtml = () => {
 
   return(
     <>
-   {loading ? <Rules html={html}/>:null}
+   {!loading ? <Rules html={html}/>:null}
    </>
   )
  
