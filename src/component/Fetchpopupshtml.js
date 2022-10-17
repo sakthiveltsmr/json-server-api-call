@@ -35,7 +35,7 @@ const Fetchpopupshtml = () => {
   },[])
 
   return(
-   loading ? <Rules html/>:null
+   loading ? <Rules html={html}/>:null
   )
  
   
