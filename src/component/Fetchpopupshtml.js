@@ -12,7 +12,7 @@ const Fetchpopupshtml = () => {
   //getting html component according to campaign.types
   const getHtml=async()=>{
     try {
-      if(campain){
+      if(campain.event){
         const result =await axios.get(`http://localhost:3004/Event/${campain.event}`)
         console.log(result.data)
         sethtml(result.data)

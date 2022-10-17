@@ -6,5 +6,5 @@ if (!document.getElementById("campaign-app")) {
 
   window.campain={
     app_id:1,
-    domain:window.location.domain
+    domain:window.location.href
   }

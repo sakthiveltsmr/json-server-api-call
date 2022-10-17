@@ -7,7 +7,7 @@ function App() {
   
   const campain=useStore((state)=>state.campain)
   const setCampain=useStore((state)=>state.setCampain)
-  
+   console.log(campain)
    
   const fetch=async()=>{
     try {
@@ -24,7 +24,7 @@ useEffect(()=>{
 },[])
 
 return (
-  campain ? <><Fetchpopupshtml/></>:null
+  campain ? <Fetchpopupshtml/>:null
 )
 }
 
