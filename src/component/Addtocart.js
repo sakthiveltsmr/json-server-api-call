@@ -14,13 +14,18 @@ export const Addtocart = ({html}) => {
                setShow(false)
        
                let main= document.getElementById('root')
+            let close=document.getElementById('Aclose')
 
+            close.addEventListener("click",()=>{
+               return data.style.display="none"
+            })
                   const data=document.createElement('div')
                   data.innerHTML=(`${html}`)
                  main.appendChild(data)
               return main
        
            }
+
         })
     }
 
