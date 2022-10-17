@@ -2,7 +2,8 @@
 import useStore from '../store'
 
 import Exitpopups from './Exitpopups'
-const Checking = () => {
+const Rules = () => {
+    
  const campain=useStore((state)=>state.campain)
  console.log("read checking popups",campain)
 
@@ -24,4 +25,4 @@ const Checking = () => {
   
 }
 
-export default Checking
+export default Rules
