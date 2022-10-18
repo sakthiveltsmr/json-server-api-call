@@ -17,10 +17,12 @@ export const PopupsManager={
                  return setHtml({...html,value})
                 }
                })
+              
                 
                 }
+                console.log("html  from onexitintent",html)
             }
-            console.log("html  from onexitintent",html)
+            
         })
         
     },
