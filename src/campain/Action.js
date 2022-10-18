@@ -14,12 +14,14 @@ export const Action=(type)=>{
             
           setRule({...Rule,events:event})
 
-          console.log("Rule",Rule)
+         
     }
 
     useEffect(()=>{
 
         Active(type)
+        
+        console.log("Rule",Rule)
 
     },[type])
     
