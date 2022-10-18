@@ -9,4 +9,6 @@ export const Action=(type)=>{
  
         })
       setRule({...Rule,events:event})
+
+      console.log(type,Rule)
 }
