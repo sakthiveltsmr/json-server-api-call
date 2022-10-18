@@ -1,8 +1,12 @@
 import map from"lodash/map"
-import { PopupsManager } from "../PopupsManager"
-const Rules = ({html}) => {
 
-  
+import { PopupsManager } from "../PopupsManager"
+
+import useStore from "../store"
+const Rules = () => {
+
+ const html=useStore((state)=>state.html)
+
  const CampaignRules=(type)=>{
 
        switch(type)
@@ -28,7 +32,7 @@ const Rules = ({html}) => {
  const renderCampaignRules=()=>{
     return map(html.events,(item,i)=>{
         let CampainRules=CampaignRules(item.type)
-        return <CampainRules key={i} html={item._html} show={true}/>
+        return <CampainRules key={i} type={item.type} show={item.active}/>
     })
  }
   return(

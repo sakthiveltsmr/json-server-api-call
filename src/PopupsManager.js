@@ -1,17 +1,32 @@
-
+import map from "lodash/map"
+import useStore from "./store"
 export const PopupsManager={
+
   
-    OnExitIntent:()=>{
+    OnExitIntent:(type,show)=>{
+        const html=useStore((state)=>state.html)
+        const setHtml=useStore((state)=>state.setHtml)
+        console.log("type",type,"show",show)
         document.addEventListener("mouseout",(e)=>{
             if(e.clientY<=0){
-                return console.log("haii")
+                if(!show){
+               return map(html,(item)=>{
+                if(item.type===type){
+                 return setHtml({...html,active:true})
+                }
+               })
+                
+                }
             }
+            console.log("html  from onexitintent",html)
         })
+        
     },
 
-    OnWelcomeIntent:()=>{
+    OnWelcomeIntent:(show)=>{
         document.addEventListener("mouseenter",()=>{
-            return console.log("welcomeIntent")
+            return 
+            
         })
     },
 
