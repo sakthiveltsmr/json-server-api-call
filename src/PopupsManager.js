@@ -12,8 +12,8 @@ export const PopupsManager={
                 if(!show){
                return map(html.events,(item)=>{
                 if(item.type===type){
-                    const values=[{...item,active:true}]
-                 return setHtml({...html,values})
+                  let value={...item,active:true}
+                 return setHtml({...html,value})
                 }
                })
                 

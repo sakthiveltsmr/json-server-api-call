@@ -9,8 +9,8 @@ const Fetchpopupshtml = () => {
   const [loading,setLoading]=useState(true)
   const campain=useStore((state)=>state.campain)
   
-  const setHtml=useStore((state)=>state.html)
- 
+  const setHtml=useStore((state)=>state.setHtml)
+  
   const getHtml=async()=>{
 
     try {
