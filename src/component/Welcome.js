@@ -13,7 +13,7 @@ const Welcome = ({html}) => {
                 console.log("CustomFnForPopUp.onWelcomeIntent(html)", CustomFnForPopUp.onWelcomeIntent(html));;
                 // return CustomFnForPopUp.onWelcomeIntent(html)
         }
-    },true)
+    })
 }
                 // let main=document.getElementById('root');
                 // let  div=document.createElement('div');

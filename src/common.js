@@ -14,8 +14,8 @@
 //   }
 
  export const CustomFnForPopUp = {
-     main:document.getElementById(`root`),
-     div:document.createElement('div'),
+     main: document.getElementById(`root`),
+     div: document.createElement('div'),
 
     // onExistIntent: (html) => {
     //     console.log("this.main1111111111111", this.main);
