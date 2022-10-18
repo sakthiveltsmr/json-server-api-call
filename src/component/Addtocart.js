@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { popups } from '../common'
 
  const Addtocart = ({html}) => {
 
@@ -13,12 +14,8 @@ import React, { useState } from 'react'
            if(show){
                setShow(false)
        
-               let main= document.getElementById('root')
-        
-                  const data=document.createElement('div')
-                  data.innerHTML=(`${html}`)
-                 main.appendChild(data)
-              return main
+               
+              return popups(html)
        
            }
 
