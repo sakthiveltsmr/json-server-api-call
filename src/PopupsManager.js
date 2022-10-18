@@ -9,7 +9,7 @@ export const PopupsManager={
         document.addEventListener("mouseout",(e)=>{
             if(e.clientY<=0){
                 if(!show){
-               return Action(type)
+                Action(type)
             }
                 
             }
