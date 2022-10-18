@@ -10,6 +10,7 @@ export const PopupsManager={
             if(e.clientY<=0){
                 if(!show){
                 Action(type)
+                console.log("mouse exit")
             }
                 
             }

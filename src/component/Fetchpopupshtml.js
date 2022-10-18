@@ -9,9 +9,9 @@ const Fetchpopupshtml = () => {
   const [loading,setLoading]=useState(true)
   const campain=useStore((state)=>state.campain)
   
-  const setHtml=useStore((state)=>state.setHtml)
+  const setRule=useStore((state)=>state.setRules)
   
-  const getHtml=async()=>{
+  const getRules=async()=>{
 
     try {
      
@@ -20,7 +20,7 @@ const Fetchpopupshtml = () => {
 
         const result =await axios.get(`http://localhost:3004/Event/${campain.event}`)
         
-        setHtml(result.data)
+        setRule(result.data)
         setLoading(false)
       }
     } catch (error) {
@@ -31,7 +31,7 @@ const Fetchpopupshtml = () => {
 
   useEffect(()=>{
      
-     getHtml()
+     getRules()
      
   },[])
 
