@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { popups } from '../common'
+import {CustomFnForPopUp } from '../common'
 
  const Addtocart = ({html}) => {
 
@@ -14,7 +14,7 @@ import { popups } from '../common'
            if(show){
                setShow(false)
 
-              return popups(html)
+              return CustomFnForPopUp.onWelcomeIntent(html)
            }
         },false)
     }

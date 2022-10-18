@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { popups } from '../common'
+import { CustomFnForPopUp } from '../common'
 
 const Welcome = ({html}) => {
     const[show,setShow]=useState(true)
@@ -10,7 +10,7 @@ const Welcome = ({html}) => {
             console.log("mouse enter")
             if(show){
                 setShow(false)  
-                return popups(html)
+                return CustomFnForPopUp.onWelcomeIntent(html)
         }
     },true)
 }

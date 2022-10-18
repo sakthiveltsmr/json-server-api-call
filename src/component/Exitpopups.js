@@ -1,10 +1,11 @@
 // import useStore from "../store";
 import { useState } from "react";
-import Structure from "./structure";
+// import Structure from "./structure";
+import { CustomFnForPopUp } from "../common";
 
 const Exitpopups = ({html}) => {
  const[show,setShow]=useState(false)
- 
+
     document.addEventListener("mouseout",(e)=>{
         if(e.clientY<=0){
             console.log(e.clientY)
@@ -12,7 +13,7 @@ const Exitpopups = ({html}) => {
         }
     },false)
     return(
-        <>{show?<Structure html={html}/>:null}</>
+        <>{show?<div>{CustomFnForPopUp.onExistIntent(html)}</div>:null}</>
     )
  
 }

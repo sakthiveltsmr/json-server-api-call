@@ -1,17 +1,31 @@
 
 
       
- export  const popups=(html)=>{
+//  export  const popups=(html)=>{
 
-     let main=document.getElementById(`root`);
-     let  div=document.createElement('div');
+     
     
-            div.innerHTML=(`${html}`);
+//             div.innerHTML=(`${html}`);
 
-            main.appendChild(div)
+//             main.appendChild(div)
 
-            return main
+//             return main
     
-  }
+//   }
 
- 
+ export const CustomFnForPopUp = {
+     main:document.getElementById(`root`),
+     div:document.createElement('div'),
+
+    onExistIntent: (html) => {
+        this.div.innerHTML=(`${html}`);
+        this.main.appendChild(this.div);
+        return this.main
+    },
+    onWelcomeIntent:(html)=>{
+        this.div.innerHTML=(`${html}`);
+        this.main.appendChild(this.div);
+        return this.main
+    }
+
+ }
