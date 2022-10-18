@@ -6,7 +6,7 @@ export const PopupsManager={
     OnExitIntent:(show,type)=>{
         const html=useStore((state)=>state.html)
         const setHtml=useStore((state)=>state.setHtml)
-        console.log("type",type)
+        console.log("type",show)
         document.addEventListener("mouseout",(e)=>{
             if(e.clientY<=0){
                 if(!show){
