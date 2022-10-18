@@ -5,13 +5,12 @@ import Structure from "./structure";
 const Exitpopups = ({html}) => {
  const[show,setShow]=useState(false)
  
-    document.onmouseout=(event)=>{
-        if(event.clientY<=0){
-            console.log(event.clientY)
+    document.addEventListener("mouseout",(e)=>{
+        if(e.clientY<=0){
+            console.log(e.clientY)
           return setShow(true)
-          
         }
-    }
+    },false)
     return(
         <>{show?<Structure html={html}/>:null}</>
     )

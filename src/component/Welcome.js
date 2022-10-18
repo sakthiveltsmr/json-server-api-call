@@ -3,12 +3,17 @@ import { popups } from '../common'
 
 const Welcome = ({html}) => {
     const[show,setShow]=useState(true)
-   let id='root'
+  
     const entrypopups=()=>{
 
-        document.onmouseenter=()=>{
+        document.addEventListener('mouseenter',()=>{
             console.log("mouse enter")
             if(show){
+                setShow(false)  
+                return popups(html)
+        }
+    },false)
+}
                 // let main=document.getElementById('root');
                 // let  div=document.createElement('div');
                 // div.innerHTML=`${html}`
@@ -20,12 +25,11 @@ const Welcome = ({html}) => {
                 // close.addEventListener("click",()=>{
                 //     return div.style.display='none'
                 // })  
-                setShow(false)  
-                return popups(html,id)
-            }
-    }
+               
+            
+   
 
-  }
+  
   return(
     <div>{entrypopups()}</div>
   )

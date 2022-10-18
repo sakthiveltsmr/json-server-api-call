@@ -13,12 +13,9 @@ import { popups } from '../common'
 
            if(show){
                setShow(false)
-       
-               
-              return popups(html)
-       
-           }
 
+              return popups(html)
+           }
         },false)
     }
 
