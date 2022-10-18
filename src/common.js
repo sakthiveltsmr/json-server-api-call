@@ -14,7 +14,7 @@
 //   }
 
  export const CustomFnForPopUp = {
-    root: document.getElementById('campaign-app'),
+    campain: document.getElementById('campaign-app'),
     div: document.createElement('div'),
 
     // onExistIntent: (html) => {
@@ -26,10 +26,10 @@
     //     return b
     // },
     onWelcomeIntent:(html)=>{
-        console.log("this.main2222222222222222", this.root);
+        console.log("this.main2222222222222222", this.campain);
         console.log("this.div2222222222222", this.div);
         let a = this.div.innerHTML=(`${html}`);
-       let b = this.main.appendChild(a);
+       let b = this.campain.appendChild(a);
        console.log("aaaaaaaaaa", a);
        console.log("bbbbbbbbbbbbb", b);
         return b
