@@ -2,10 +2,10 @@ import map from"lodash/map"
 
 import { PopupsManager } from "../PopupsManager"
 
-import useStore from "../store"
-const Rules = () => {
+// import useStore from "../store"
+const Rules = ({html}) => {
 
- const html=useStore((state)=>state.html)
+//  const html=useStore((state)=>state.html)
    console.log("html values",html)
  const CampaignRules=(type)=>{
 

@@ -5,11 +5,11 @@ import Rules from "./Rules"
 
 const Fetchpopupshtml = () => {
 
-  // const [html,setHtml]=useState([])
+  const [html,setHtml]=useState([])
   const [loading,setLoading]=useState(true)
   const campain=useStore((state)=>state.campain)
   
-  const setHtml=useStore((state)=>state.html)
+  // const setHtml=useStore((state)=>state.html)
  
   const getHtml=async()=>{
 
@@ -37,7 +37,7 @@ const Fetchpopupshtml = () => {
 
   return(
     <>
-   {!loading ? <Rules/>:null}
+   {!loading ? <Rules html={html}/>:null}
    </>
   )
  
