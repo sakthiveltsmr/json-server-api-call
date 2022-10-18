@@ -13,7 +13,8 @@ const Exitpopups = ({html}) => {
         }
     },false)
     return(
-        <>{show?<div>{CustomFnForPopUp.onExistIntent(html)}</div>:null}</>
+        // <>{show?<div>{CustomFnForPopUp.onExistIntent(html)}</div>:null}</>
+        <></>
     )
  
 }
