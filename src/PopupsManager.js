@@ -7,7 +7,7 @@ export const PopupsManager={
         // console.log("object",props);
         const html=useStore((state)=>state.html)
         const setHtml=useStore((state)=>state.setHtml)
-        console.log("type",show)
+        //console.log("type",show)
         document.addEventListener("mouseout",(e)=>{
             if(e.clientY<=0){
                 if(!show){
@@ -22,7 +22,7 @@ export const PopupsManager={
               
                 
                 }
-                console.log("html  from onexitintent",html)
+                //console.log("html  from onexitintent",html)
             }
             
         })
