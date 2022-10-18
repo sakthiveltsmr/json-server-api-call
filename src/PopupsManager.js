@@ -13,10 +13,11 @@ export const PopupsManager={
                 if(!show){
                return map(html.events,(item)=>{
                 if(item.type===type){
-                    console.log("item",item);
+                    // console.log("item",item);
                   let value={...item,active:true}
-                  console.log("value", value);
-                 return setHtml({...html,value})
+                  html.events = {...value};
+                  console.log("html", html);
+                //  return setHtml({...html,value})
                 }
                })
               
