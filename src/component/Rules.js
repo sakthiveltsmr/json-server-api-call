@@ -6,7 +6,7 @@ import useStore from "../store"
 const Rules = () => {
 
  const html=useStore((state)=>state.html)
-
+   console.log("html values",html)
  const CampaignRules=(type)=>{
 
        switch(type)
