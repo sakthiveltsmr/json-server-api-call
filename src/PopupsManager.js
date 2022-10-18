@@ -11,20 +11,15 @@ export const PopupsManager={
         document.addEventListener("mouseout",(e)=>{
             if(e.clientY<=0){
                 if(!show){
-               return map(html.events,(item)=>{
-                if(item.type===type){
-                    // console.log("item",item);
-                  let value={...item,active:true}
-                  html.events = {...value};
-                  console.log("html", html);
-                //  return setHtml({...html,value})
-                }
+               const event= map(html.events,(item)=>{
+               return item.type === type ? { ...item, active:true } : item
+        
                })
-              
+              html.event = [...event]
                 
                 }
-                //console.log("html  from onexitintent",html)
             }
+            console.log("html",html)
             
         })
         
