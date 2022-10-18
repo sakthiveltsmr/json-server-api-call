@@ -10,7 +10,7 @@ export const PopupsManager={
             if(e.clientY<=0){
                 if(!show){
                 Action(type)
-                console.log("mouse exit")
+                
             }
                 
             }
@@ -21,28 +21,37 @@ export const PopupsManager={
         
     },
 
-    OnWelcomeIntent:(show)=>{
+    OnWelcomeIntent:({show, type})=>{
         document.addEventListener("mouseenter",()=>{
-            return 
+            if(!show){
+                Action(type)  
+            }
             
         })
     },
 
-    OnBannerIntent:()=>{
-        return console.log("banner")
+    OnBannerIntent:({show,type})=>{
+       if(!show){
+        Action(type)
+       }
     },
 
-    OnAddtocartIntent:()=>{
+    OnAddtocartIntent:({show,type})=>{
         let add=document.getElementById('addcart');
         add.addEventListener("click",()=>{
-            return console.log("Addtocart")
+            if(!show){
+                Action(type)  
+            }
         })
     },
 
-    OnCouponIntent:()=>{
+    OnCouponIntent:({show, type})=>{
         document.addEventListener("mouseenter",()=>{
             setTimeout(()=>{
-                return console.log("CouponIntent")
+                if(!show){
+                    Action(type)
+                    
+                }
             },5000)
         })
     }
