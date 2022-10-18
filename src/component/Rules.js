@@ -5,8 +5,8 @@ import { PopupsManager } from "../PopupsManager"
 import useStore from "../store"
 const Rules = () => {
 
- const html=useStore((state)=>state.html)
-   console.log("html values",html)
+ const Rule=useStore((state)=>state.Rules)
+   
  const CampaignRules=(type)=>{
 
        switch(type)
@@ -30,14 +30,14 @@ const Rules = () => {
      }
    
  const renderCampaignRules=()=>{
-    return map(html.events,(item,i)=>{
+    return map(Rule.events,(item,i)=>{
         let CampainRules=CampaignRules(item.type)
         return <CampainRules key={i} type={item.type} show={item.active}/>
     })
  }
   return(
     <div>
-        { html.length!==0 ? <div>{renderCampaignRules()}</div>:null}
+        { Rule.length!==0 ? <div>{renderCampaignRules()}</div>:null}
     
     </div>
               

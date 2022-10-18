@@ -1,25 +1,18 @@
-import map from "lodash/map"
-import useStore from "./store"
+import { Action } from "./campain/Action"
+
+
 export const PopupsManager={
 
   
     OnExitIntent:({show, type })=>{
-        // console.log("object",props);
-        const html=useStore((state)=>state.html)
-        const setHtml=useStore((state)=>state.setHtml)
-      
-        //console.log("type",show)
+        
         document.addEventListener("mouseout",(e)=>{
             if(e.clientY<=0){
                 if(!show){
-               const event= map(html.events,(item)=>{
-               return item.type === type ? { ...item, active:true } : item
-        
-               })
-             setHtml({...html,events:event})
+               return Action(type)
             }
                 
-                }
+            }
             }
            
             
