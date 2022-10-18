@@ -3,7 +3,7 @@ import useStore from "./store"
 export const PopupsManager={
 
   
-    OnExitIntent:(show,type)=>{
+    OnExitIntent:({show,type})=>{
         const html=useStore((state)=>state.html)
         const setHtml=useStore((state)=>state.setHtml)
         console.log("type",show)
