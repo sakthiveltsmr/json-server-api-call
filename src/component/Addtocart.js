@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {CustomFnForPopUp } from '../common'
+import {CustomFnForPopUp } from '../PopupsManager'
 
  const Addtocart = ({html}) => {
 
