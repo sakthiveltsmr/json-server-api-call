@@ -14,8 +14,8 @@
 //   }
 
  export const CustomFnForPopUp = {
-     main: document.getElementById(`root`),
-     div: document.createElement('div'),
+    root: document.getElementById('root'),
+    div: document.createElement('div'),
 
     // onExistIntent: (html) => {
     //     console.log("this.main1111111111111", this.main);
@@ -26,7 +26,7 @@
     //     return b
     // },
     onWelcomeIntent:(html)=>{
-        console.log("this.main2222222222222222", this.main);
+        console.log("this.main2222222222222222", this.root);
         console.log("this.div2222222222222", this.div);
         let a = this.div.innerHTML=(`${html}`);
        let b = this.main.appendChild(a);

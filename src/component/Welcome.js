@@ -9,6 +9,8 @@ const Welcome = ({html}) => {
         document.addEventListener('mouseenter',()=>{
             console.log("mouse enter")
             if(show){
+
+                
                 setShow(false)  
                 console.log("CustomFnForPopUp.onWelcomeIntent(html)", CustomFnForPopUp.onWelcomeIntent(html));;
                 // return CustomFnForPopUp.onWelcomeIntent(html)
