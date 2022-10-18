@@ -20,7 +20,7 @@ export const Action=(type)=>{
     
     
 
-  return Active(type)
+  return <div>{Active(type)}</div>
    
     
   
