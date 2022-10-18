@@ -15,7 +15,7 @@ export const PopupsManager={
                return item.type === type ? { ...item, active:true } : item
         
                })
-              html.events = [...event]
+             return {...html,events:event}
                 
                 }
             }
