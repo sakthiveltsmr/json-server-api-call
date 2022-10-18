@@ -3,15 +3,15 @@ import useStore from "./store"
 export const PopupsManager={
 
   
-    OnExitIntent:(props)=>{
+    OnExitIntent:({show,type})=>{
         const html=useStore((state)=>state.html)
         const setHtml=useStore((state)=>state.setHtml)
-        console.log("type",props.type)
+        console.log("type",type)
         document.addEventListener("mouseout",(e)=>{
             if(e.clientY<=0){
-                if(!props.show){
+                if(!show){
                return map(html.events,(item)=>{
-                if(item.type===props.type){
+                if(item.type===type){
                     const values={...item,active:true}
                  return setHtml({...html,values})
                 }
