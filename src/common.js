@@ -18,14 +18,14 @@
      div:document.createElement('div'),
 
     onExistIntent: (html) => {
-        this.div.innerHTML=(`${html}`);
-        this.main.appendChild(this.div);
-        return this.main
+       let a= this.div.innerHTML=(`${html}`);
+       let b= this.main.appendChild(a);
+        return b
     },
     onWelcomeIntent:(html)=>{
         let a = this.div.innerHTML=(`${html}`);
-        this.main.appendChild(a);
-        return this.main
+       let b = this.main.appendChild(a);
+        return b
     }
 
  }

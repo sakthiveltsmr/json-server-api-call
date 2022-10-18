@@ -10,7 +10,8 @@ const Welcome = ({html}) => {
             console.log("mouse enter")
             if(show){
                 setShow(false)  
-                return CustomFnForPopUp.onWelcomeIntent(html)
+                console.log("CustomFnForPopUp.onWelcomeIntent(html)", CustomFnForPopUp.onWelcomeIntent(html));;
+                // return CustomFnForPopUp.onWelcomeIntent(html)
         }
     },true)
 }
