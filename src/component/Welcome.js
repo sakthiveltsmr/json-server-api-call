@@ -12,7 +12,7 @@ const Welcome = ({html}) => {
                 setShow(false)  
                 return popups(html)
         }
-    },false)
+    },true)
 }
                 // let main=document.getElementById('root');
                 // let  div=document.createElement('div');
