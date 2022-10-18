@@ -6,7 +6,7 @@ import create from "zustand";
         set({campain:data})
     },
     setHtml:(data)=>{
-        set([{html:data}])
+        set({html:data})
     }
  }))
 
