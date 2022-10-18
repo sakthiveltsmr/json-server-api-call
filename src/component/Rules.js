@@ -1,8 +1,5 @@
 import map from"lodash/map"
-import Exitpopups from "./Exitpopups"
-import Banner from "./Banner"
-import Welcome from "./Welcome"
-import Addtocart from "./Addtocart"
+import { PopupsManager } from "../PopupsManager"
 const Rules = ({html}) => {
 
   
@@ -11,13 +8,13 @@ const Rules = ({html}) => {
        switch(type)
         {
         case "Exitpopups":
-             return Exitpopups 
+             return PopupsManager.OnExitIntent 
         case "Banner":
-            return Banner
+            return PopupsManager.OnBannerIntent
         case "Welcomepopups":
-            return Welcome 
+            return PopupsManager.OnWelcomeIntent 
         case "Addtocart":
-            return Addtocart  
+            return PopupsManager.OnAddtocartIntent  
                 
         default:
              return null

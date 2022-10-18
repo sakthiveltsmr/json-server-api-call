@@ -1,7 +1,7 @@
 // import useStore from "../store";
 import { useState } from "react";
 // import Structure from "./structure";
-import { CustomFnForPopUp } from "../common";
+import { CustomFnForPopUp } from "../PopupsManager";
 
 const Exitpopups = ({html}) => {
  const[show,setShow]=useState(false)
