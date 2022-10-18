@@ -14,7 +14,7 @@
 //   }
 
  export const CustomFnForPopUp = {
-    root: document.getElementById('root'),
+    root: document.getElementById('campaign-app'),
     div: document.createElement('div'),
 
     // onExistIntent: (html) => {
