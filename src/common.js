@@ -23,8 +23,8 @@
         return this.main
     },
     onWelcomeIntent:(html)=>{
-        this.div.innerHTML=(`${html}`);
-        this.main.appendChild(this.div);
+        let a = this.div.innerHTML=(`${html}`);
+        this.main.appendChild(a);
         return this.main
     }
 
