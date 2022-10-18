@@ -10,7 +10,7 @@ export const PopupsManager={
         document.addEventListener("mouseout",(e)=>{
             if(e.clientY<=0){
                 if(!show){
-               return map(html,(item)=>{
+               return map(html.events,(item)=>{
                 if(item.type===type){
                  return setHtml({...html,active:true})
                 }
