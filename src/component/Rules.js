@@ -8,21 +8,21 @@ const Rules = () => {
 
  const Rule=useStore((state)=>state.Rules)
    
- const CampaignRules=(type)=>{
+ const CampaignRules=(item)=>{
 
-       switch(type)
+       switch(item.type)
         {
         case "Exitpopups":
-             PopupsManager.OnExitIntent ()
+             PopupsManager.OnExitIntent (item.type,item.active)
              break;
         case "Banner":
-            PopupsManager.OnBannerIntent()
+            PopupsManager.OnBannerIntent(item.type,item.active)
             break;
         case "Welcomepopups":
-            PopupsManager.OnWelcomeIntent ()
+            PopupsManager.OnWelcomeIntent (item.type,item.active)
             break;
         case "Addtocart":
-            PopupsManager.OnAddtocartIntent  ()
+            PopupsManager.OnAddtocartIntent  (item.type,item.active)
             break;
         default:
              null()
@@ -35,7 +35,7 @@ const Rules = () => {
      }
 useEffect(() => {
      map(Rule.events,(item,i)=>{
-                CampaignRules(item.type)
+                CampaignRules(item)
             })
 }, [Rule])
 

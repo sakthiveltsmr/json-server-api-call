@@ -4,7 +4,9 @@ import { Action } from "./campain/Action"
 export const PopupsManager={
 
   
-    OnExitIntent:({show, type })=>{
+    OnExitIntent:(show, type)=>{
+        console.log("shows",show)
+        console.log("types",type)
         
         document.addEventListener("mouseout",(e)=>{
             if(e.clientY<=0){
@@ -21,7 +23,7 @@ export const PopupsManager={
         
     },
 
-    OnWelcomeIntent:({show, type})=>{
+    OnWelcomeIntent:(show, type)=>{
         document.addEventListener("mouseenter",()=>{
             console.log("OnWelcomeIntent");
 
@@ -32,7 +34,7 @@ export const PopupsManager={
         })
     },
 
-    OnBannerIntent:({show,type})=>{
+    OnBannerIntent:(show,type)=>{
        if(!show){
         console.log("OnBannerIntent");
 
@@ -40,7 +42,7 @@ export const PopupsManager={
        }
     },
 
-    OnAddtocartIntent:({show,type})=>{
+    OnAddtocartIntent:(show,type)=>{
         let add=document.getElementById('addcart');
         add.addEventListener("click",()=>{
         console.log("OnAddtocartIntent");
@@ -51,7 +53,7 @@ export const PopupsManager={
         })
     },
 
-    OnCouponIntent:({show, type})=>{
+    OnCouponIntent:(show, type)=>{
         document.addEventListener("mouseenter",()=>{
         console.log("OnCouponIntent");
 
