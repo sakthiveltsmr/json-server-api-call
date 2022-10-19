@@ -13,20 +13,20 @@ const Rules = () => {
        switch(item.type)
         {
         case "Exitpopups":
-             PopupsManager.OnExitIntent (item.active,item.type)
+             PopupsManager.OnExitIntent(item.active,item.type)
              break;
         case "Banner":
             PopupsManager.OnBannerIntent(item.active,item.type)
             break;
         case "Welcomepopups":
-            PopupsManager.OnWelcomeIntent (item.active,item.type)
+            PopupsManager.OnWelcomeIntent(item.active,item.type)
             break;
         case "Addtocart":
-            PopupsManager.OnAddtocartIntent  (item.active,item.type)
+            PopupsManager.OnAddtocartIntent(item.active,item.type)
             break;
         default:
              null()
-             break;
+             
         }
    
     //    })
