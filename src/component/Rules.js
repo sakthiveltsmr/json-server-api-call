@@ -1,4 +1,5 @@
 import map from"lodash/map"
+import { useEffect } from "react"
 
 import { PopupsManager } from "../PopupsManager"
 
@@ -12,32 +13,41 @@ const Rules = () => {
        switch(type)
         {
         case "Exitpopups":
-             return PopupsManager.OnExitIntent 
+             PopupsManager.OnExitIntent ()
+             break;
         case "Banner":
-            return PopupsManager.OnBannerIntent
+            PopupsManager.OnBannerIntent()
+            break;
         case "Welcomepopups":
-            return PopupsManager.OnWelcomeIntent 
+            PopupsManager.OnWelcomeIntent ()
+            break;
         case "Addtocart":
-            return PopupsManager.OnAddtocartIntent  
-                
+            PopupsManager.OnAddtocartIntent  ()
+            break;
         default:
-             return null
+             null()
+             break;
         }
    
     //    })
         
        
      }
-   
- const renderCampaignRules=()=>{
-    return map(Rule.events,(item,i)=>{
-        let CampainRules=CampaignRules(item.type)
-        return <CampainRules key={i} type={item.type} show={item.active}/>
-    })
- }
+useEffect(() => {
+     map(Rule.events,(item,i)=>{
+                CampaignRules(item.type)
+            })
+}, [Rule])
+
+//  const renderCampaignRules=()=>{
+//     return map(Rule.events,(item,i)=>{
+//         let CampainRules=CampaignRules(item.type)
+//         return <CampainRules key={i} type={item.type} show={item.active}/>
+//     })
+//  }
   return(
     <div>
-        { Rule.length!==0 ? <div>{renderCampaignRules()}</div>:null}
+        {}
     
     </div>
               
