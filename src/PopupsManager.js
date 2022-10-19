@@ -1,5 +1,5 @@
 import  map  from "lodash/map"
-import { useStore } from "zustand"
+import useStore from "./store";
 // import { Action } from "./campain/Action"
 
 
