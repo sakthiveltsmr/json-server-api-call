@@ -17,7 +17,7 @@ export const Action=(type)=>{
             
           // setRule({...Rule,events:event})
 
-         console.log("active")
+         console.log("check active")
     }
     // console.log("sample");
     useEffect(()=>{
