@@ -1,4 +1,4 @@
-import { map } from "lodash"
+import  map  from "lodash/map"
 import { useStore } from "zustand"
 // import { Action } from "./campain/Action"
 
@@ -30,8 +30,10 @@ export const PopupsManager={
     },
 
     OnWelcomeIntent:({show, type})=>{
+
         const Rule=useStore((state)=>state.Rules)
         const setRule=useStore((state)=>state.setRules)
+
         document.addEventListener("mouseenter",()=>{
             console.log("OnWelcomeIntent");
 
@@ -48,8 +50,10 @@ export const PopupsManager={
     },
 
     OnBannerIntent:({show,type})=>{
+
         const Rule=useStore((state)=>state.Rules)
         const setRule=useStore((state)=>state.setRules)
+
        if(!show){
         const event= map(Rule.events,(item)=>{
             return item.type === type ? { ...item, active:true } : item
@@ -61,8 +65,10 @@ export const PopupsManager={
     },
 
     OnAddtocartIntent:({show,type})=>{
+
         const Rule=useStore((state)=>state.Rules)
         const setRule=useStore((state)=>state.setRules)
+        
         let add=document.getElementById('addcart');
         add.addEventListener("click",()=>{
         console.log("OnAddtocartIntent");
