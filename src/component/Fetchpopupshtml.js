@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import useStore from "../store";
-import Rules from "./Rules"
-
+// import Rules from "./Rules"
+import PopupManager from "./PopupManager";
 const Fetchpopupshtml = () => {
 
   // const [html,setHtml]=useState([])
@@ -37,7 +37,7 @@ const Fetchpopupshtml = () => {
 
   return(
     <>
-   {!loading ? <Rules/>:null}
+   {!loading ? <PopupManager/>:null}
    </>
   )
  
