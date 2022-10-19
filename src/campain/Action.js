@@ -1,5 +1,6 @@
 import useStore from "../store"
 import map from "lodash/map"
+import { useEffect } from "react"
 
 
 export const Action=(type)=>{
@@ -19,10 +20,12 @@ export const Action=(type)=>{
          //console.log("active",Rule)
     }
 
-    
+    useEffect(()=>{
+      Active(type)
+    },[type])
     
 
-  return <div>{Active(type)}</div>
+  return null
    
     
   
