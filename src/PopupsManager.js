@@ -7,8 +7,7 @@ export const PopupsManager={
 
   
     OnExitIntent:({show, type})=>{
-         console.log("shows",show)
-         console.log("types",type);
+        
         const Rule=useStore((state)=>state.Rules)
         const setRule=useStore((state)=>state.setRules)
         
@@ -37,7 +36,7 @@ export const PopupsManager={
         const setRule=useStore((state)=>state.setRules)
 
         document.addEventListener("mouseenter",()=>{
-            console.log("OnWelcomeIntent");
+           
 
             if(!show){
                 const event= map(Rule.events,(item)=>{
@@ -45,8 +44,7 @@ export const PopupsManager={
                     })
                     
                   setRule({...Rule,events:event})
-                  console.log("afterwelcome",event)
-                console.log("welcome",Rule)
+               
             }
             
         })
@@ -63,7 +61,7 @@ export const PopupsManager={
             })
             
           setRule({...Rule,events:event})
-          console.log("banner",Rule)
+        
        }
     },
 
@@ -74,7 +72,7 @@ export const PopupsManager={
 
         let add=document.getElementById('addcart');
         add.addEventListener("click",()=>{
-        console.log("OnAddtocartIntent");
+      
 
             if(!show){
                 const event= map(Rule.events,(item)=>{
@@ -83,7 +81,7 @@ export const PopupsManager={
                     
                   setRule({...Rule,events:event})  
 
-                  console.log("Addtocart",Rule)
+                 
             }
         })
     },
