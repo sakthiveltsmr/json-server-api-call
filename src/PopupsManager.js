@@ -9,6 +9,7 @@ export const PopupsManager={
         console.log("types",type)
         
         document.addEventListener("mouseout",(e)=>{
+            console.log("events",e)
             if(e.clientY<=0){
                 if(!show){
                     console.log("OnExitIntent");
@@ -28,6 +29,7 @@ export const PopupsManager={
             console.log("OnWelcomeIntent");
 
             if(!show){
+                console.log("events onwelcome")
                 Action(type)  
             }
             

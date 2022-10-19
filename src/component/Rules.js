@@ -13,16 +13,16 @@ const Rules = () => {
        switch(item.type)
         {
         case "Exitpopups":
-             PopupsManager.OnExitIntent (item.type,item.active)
+             PopupsManager.OnExitIntent (item.active,item.type)
              break;
         case "Banner":
-            PopupsManager.OnBannerIntent(item.type,item.active)
+            PopupsManager.OnBannerIntent(item.active,item.type)
             break;
         case "Welcomepopups":
-            PopupsManager.OnWelcomeIntent (item.type,item.active)
+            PopupsManager.OnWelcomeIntent (item.active,item.type)
             break;
         case "Addtocart":
-            PopupsManager.OnAddtocartIntent  (item.type,item.active)
+            PopupsManager.OnAddtocartIntent  (item.active,item.type)
             break;
         default:
              null()
