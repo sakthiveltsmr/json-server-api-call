@@ -1,6 +1,6 @@
-import useStore from "../store"
-import map from "lodash/map"
-import { useEffect } from "react"
+// import useStore from "../store"
+// import map from "lodash/map"
+// import { useEffect } from "react"
 
 
 export const Action=(type)=>{
