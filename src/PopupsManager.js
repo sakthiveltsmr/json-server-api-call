@@ -5,11 +5,10 @@ export const PopupsManager={
 
   
     OnExitIntent:(show, type)=>{
-        console.log("shows",show)
-        console.log("types",type)
+       
         
         document.addEventListener("mouseout",(e)=>{
-            console.log("events",e)
+           
             if(e.clientY<=0){
                 if(!show){
                     console.log("OnExitIntent");
@@ -37,6 +36,8 @@ export const PopupsManager={
     },
 
     OnBannerIntent:(show,type)=>{
+        console.log("shows",show)
+        console.log("types",type)
        if(!show){
         console.log("OnBannerIntent");
 

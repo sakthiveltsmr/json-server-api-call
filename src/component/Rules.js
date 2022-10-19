@@ -9,7 +9,7 @@ const Rules = () => {
  const Rule=useStore((state)=>state.Rules)
    
  const CampaignRules=(item)=>{
-
+         console.log("haii",item.type)
        switch(item.type)
         {
         case "Exitpopups":
