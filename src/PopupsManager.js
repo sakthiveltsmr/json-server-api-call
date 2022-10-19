@@ -1,70 +1,97 @@
-import { Action } from "./campain/Action"
+import { map } from "lodash"
+import { useStore } from "zustand"
+// import { Action } from "./campain/Action"
 
 
 export const PopupsManager={
 
   
     OnExitIntent:({show, type})=>{
-       
+        const Rule=useStore((state)=>state.Rules)
+        const setRule=useStore((state)=>state.setRules)
         
         document.addEventListener("mouseout",(e)=>{
            
             if(e.clientY<=0){
                 if(!show){
-                    console.log("OnExitIntent");
-                  return  <Action type={type}/>
-            }
+            const event= map(Rule.events,(item)=>{
+            return item.type === type ? { ...item, active:true } : item
+            })
+            
+          setRule({...Rule,events:event})
 
             }
-            }
+         }
+        
            
             
-        )
+    })
         
     },
 
     OnWelcomeIntent:({show, type})=>{
+        const Rule=useStore((state)=>state.Rules)
+        const setRule=useStore((state)=>state.setRules)
         document.addEventListener("mouseenter",()=>{
             console.log("OnWelcomeIntent");
 
             if(!show){
-                console.log("events onwelcome")
-              return  <Action type={type}/>
+                const event= map(Rule.events,(item)=>{
+                    return item.type === type ? { ...item, active:true } : item
+                    })
+                    
+                  setRule({...Rule,events:event})
+        
             }
             
         })
     },
 
     OnBannerIntent:({show,type})=>{
-        console.log("shows",show)
-        console.log("types",type)
+        const Rule=useStore((state)=>state.Rules)
+        const setRule=useStore((state)=>state.setRules)
        if(!show){
-        console.log("OnBannerIntent");
+        const event= map(Rule.events,(item)=>{
+            return item.type === type ? { ...item, active:true } : item
+            })
+            
+          setRule({...Rule,events:event})
 
-       return <Action type={type}/>
        }
     },
 
     OnAddtocartIntent:({show,type})=>{
+        const Rule=useStore((state)=>state.Rules)
+        const setRule=useStore((state)=>state.setRules)
         let add=document.getElementById('addcart');
         add.addEventListener("click",()=>{
         console.log("OnAddtocartIntent");
 
             if(!show){
-              return  <Action type={type}/>
+                const event= map(Rule.events,(item)=>{
+                    return item.type === type ? { ...item, active:true } : item
+                    })
+                    
+                  setRule({...Rule,events:event})  
             }
         })
     },
 
     OnCouponIntent:({show, type})=>{
+        const Rule=useStore((state)=>state.Rules)
+        const setRule=useStore((state)=>state.setRules)
         document.addEventListener("mouseenter",()=>{
         console.log("OnCouponIntent");
 
             setTimeout(()=>{
                 if(!show){
-                    return <Action type={type}/>
-                    
+                    const event= map(Rule.events,(item)=>{
+                        return item.type === type ? { ...item, active:true } : item
+                        })
+                        
+                      setRule({...Rule,events:event})  
                 }
+                
             },5000)
         })
     }

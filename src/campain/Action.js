@@ -11,11 +11,7 @@ export const Action=(type)=>{
     // console.log("Rule", Rule);
 
     const Active=(type)=>{
-        // const event= map(Rule.events,(item)=>{
-        //     return item.type === type ? { ...item, active:true } : item
-        //     })
-            
-          // setRule({...Rule,events:event})
+        
 
          console.log("check active")
     }
