@@ -45,6 +45,7 @@ export const PopupsManager={
                     })
                     
                   setRule({...Rule,events:event})
+                  console.log("afterwelcome",event)
                 console.log("welcome",Rule)
             }
             
