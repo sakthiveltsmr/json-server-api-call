@@ -7,13 +7,15 @@ export const PopupsManager={
 
   
     OnExitIntent:({show, type})=>{
+         console.log("shows",show)
+         console.log("types",type);
         const Rule=useStore((state)=>state.Rules)
         const setRule=useStore((state)=>state.setRules)
         
         document.addEventListener("mouseout",(e)=>{
            
             if(e.clientY<=0){
-                if(!show){
+             if(!show){
             const event= map(Rule.events,(item)=>{
             return item.type === type ? { ...item, active:true } : item
             })
@@ -68,7 +70,7 @@ export const PopupsManager={
 
         const Rule=useStore((state)=>state.Rules)
         const setRule=useStore((state)=>state.setRules)
-        
+
         let add=document.getElementById('addcart');
         add.addEventListener("click",()=>{
         console.log("OnAddtocartIntent");
