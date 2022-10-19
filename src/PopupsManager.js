@@ -4,7 +4,7 @@ import { Action } from "./campain/Action"
 export const PopupsManager={
 
   
-    OnExitIntent:(show, type)=>{
+    OnExitIntent:({show, type})=>{
        
         
         document.addEventListener("mouseout",(e)=>{
@@ -12,7 +12,7 @@ export const PopupsManager={
             if(e.clientY<=0){
                 if(!show){
                     console.log("OnExitIntent");
-                    Action(type)
+                  return  <Action type={type}/>
             }
 
             }
@@ -23,46 +23,46 @@ export const PopupsManager={
         
     },
 
-    OnWelcomeIntent:(show, type)=>{
+    OnWelcomeIntent:({show, type})=>{
         document.addEventListener("mouseenter",()=>{
             console.log("OnWelcomeIntent");
 
             if(!show){
                 console.log("events onwelcome")
-                Action(type)  
+              return  <Action type={type}/>
             }
             
         })
     },
 
-    OnBannerIntent:(show,type)=>{
+    OnBannerIntent:({show,type})=>{
         console.log("shows",show)
         console.log("types",type)
        if(!show){
         console.log("OnBannerIntent");
 
-        Action(type)
+       return <Action type={type}/>
        }
     },
 
-    OnAddtocartIntent:(show,type)=>{
+    OnAddtocartIntent:({show,type})=>{
         let add=document.getElementById('addcart');
         add.addEventListener("click",()=>{
         console.log("OnAddtocartIntent");
 
             if(!show){
-                Action(type)  
+              return  <Action type={type}/>
             }
         })
     },
 
-    OnCouponIntent:(show, type)=>{
+    OnCouponIntent:({show, type})=>{
         document.addEventListener("mouseenter",()=>{
         console.log("OnCouponIntent");
 
             setTimeout(()=>{
                 if(!show){
-                    Action(type)
+                    return <Action type={type}/>
                     
                 }
             },5000)

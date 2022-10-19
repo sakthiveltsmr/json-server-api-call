@@ -1,5 +1,4 @@
 import map from"lodash/map"
-import { useEffect } from "react"
 
 import { PopupsManager } from "../PopupsManager"
 
@@ -8,46 +7,37 @@ const Rules = () => {
 
  const Rule=useStore((state)=>state.Rules)
    
- const CampaignRules=(item)=>{
-         console.log("haii",item.type)
-       switch(item.type)
+ const CampaignRules=(type)=>{
+
+       switch(type)
         {
         case "Exitpopups":
-             PopupsManager.OnExitIntent(item.active,item.type)
-             break;
+             return PopupsManager.OnExitIntent 
         case "Banner":
-            PopupsManager.OnBannerIntent(item.active,item.type)
-            break;
+            return PopupsManager.OnBannerIntent
         case "Welcomepopups":
-            PopupsManager.OnWelcomeIntent(item.active,item.type)
-            break;
+            return PopupsManager.OnWelcomeIntent 
         case "Addtocart":
-            PopupsManager.OnAddtocartIntent(item.active,item.type)
-            break;
+            return PopupsManager.OnAddtocartIntent  
+                
         default:
-             null()
-             
+             return null
         }
    
     //    })
         
        
      }
-useEffect(() => {
-     map(Rule.events,(item,i)=>{
-                CampaignRules(item)
-            })
-}, [Rule])
-
-//  const renderCampaignRules=()=>{
-//     return map(Rule.events,(item,i)=>{
-//         let CampainRules=CampaignRules(item.type)
-//         return <CampainRules key={i} type={item.type} show={item.active}/>
-//     })
-//  }
+   
+ const renderCampaignRules=()=>{
+    return map(Rule.events,(item,i)=>{
+        let CampainRules=CampaignRules(item.type)
+        return <CampainRules key={i} type={item.type} show={item.active}/>
+    })
+ }
   return(
     <div>
-        {}
+        { Rule.length!==0 ? <div>{renderCampaignRules()}</div>:null}
     
     </div>
               
