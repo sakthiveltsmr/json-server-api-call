@@ -45,7 +45,7 @@ export const PopupsManager={
                     })
                     
                   setRule({...Rule,events:event})
-        
+                console.log("welcome",Rule)
             }
             
         })
@@ -62,7 +62,7 @@ export const PopupsManager={
             })
             
           setRule({...Rule,events:event})
-
+          console.log("banner",Rule)
        }
     },
 
@@ -81,23 +81,25 @@ export const PopupsManager={
                     })
                     
                   setRule({...Rule,events:event})  
+
+                  console.log("Addtocart",Rule)
             }
         })
     },
 
     OnCouponIntent:({show, type})=>{
-        const Rule=useStore((state)=>state.Rules)
-        const setRule=useStore((state)=>state.setRules)
+        // const Rule=useStore((state)=>state.Rules)
+        // const setRule=useStore((state)=>state.setRules)
         document.addEventListener("mouseenter",()=>{
         console.log("OnCouponIntent");
 
             setTimeout(()=>{
                 if(!show){
-                    const event= map(Rule.events,(item)=>{
-                        return item.type === type ? { ...item, active:true } : item
-                        })
+                    // const event= map(Rule.events,(item)=>{
+                    //     return item.type === type ? { ...item, active:true } : item
+                    //     })
                         
-                      setRule({...Rule,events:event})  
+                    //   setRule({...Rule,events:event})  
                 }
                 
             },5000)
