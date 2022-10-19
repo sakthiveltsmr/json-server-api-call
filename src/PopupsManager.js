@@ -8,10 +8,10 @@ export const PopupsManager={
         
         document.addEventListener("mouseout",(e)=>{
             if(e.clientY<=0){
-                // if(!show){
+                if(!show){
                     console.log("OnExitIntent");
                     Action(type)
-            // }
+            }
 
             }
             }
