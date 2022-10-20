@@ -1,30 +1,17 @@
-import useStore from "../store"
 import map from "lodash/map"
 
+export const Action={
 
+    ActiveEvent:(type,Rule,setRule)=>{
 
-export const Action=({type})=>{
-    console.log("types",type)
-    const Rule=useStore((state)=>state.Rules)
-    const setRule=useStore((state)=>state.setRules)
+        
+        const event=map(Rule.events,(item,i)=>{
+            return item.type===type? {...item,active:true}:item
+        })
 
-    // console.log("Rule",Rule);
-    // console.log(first)
+        setRule({...Rule,events:event})
 
-   
-    const Active=(type)=>{
-        const event= map(Rule.events,(item,i)=>{
-          return item.type===type? {...item,active:true}:item
-        })  
-       setRule({...Rule,events:event})
-       return event;
-    }
-   
-    
- return <>{Active(type)}</>
-  // return null
-   
-    
-  
       
+        
+    }
 }

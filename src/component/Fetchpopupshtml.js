@@ -1,11 +1,13 @@
 import axios from "axios";
+import { map } from "lodash";
 import { useEffect, useState } from "react";
+import Popper from "../popper";
 import useStore from "../store";
-// import Rules from "./Rules"
-import PopupManager from "./PopupManager";
-const Fetchpopupshtml = () => {
 
-  // const [html,setHtml]=useState([])
+import PopupManager from "./PopupManager";
+const FetchpopupRules = () => {
+  
+  const Rule=useStore((state)=>state.Rules)
   const [loading,setLoading]=useState(true)
   const campain=useStore((state)=>state.campain)
   
@@ -29,6 +31,15 @@ const Fetchpopupshtml = () => {
     
   }
 
+
+  const handelLoad=()=>{
+    return map(Rule.events,(item,i)=>{
+      
+      return(<div><Popper type={item.position} id={i} html={item._html} show={item.active}/>
+      <PopupManager/>
+      </div> )
+   })
+   }
   useEffect(()=>{
      
      getRules()
@@ -37,7 +48,7 @@ const Fetchpopupshtml = () => {
 
   return(
     <>
-   {!loading ? <PopupManager/>:null}
+   {!loading ? handelLoad() :null}
    </>
   )
  
@@ -45,4 +56,4 @@ const Fetchpopupshtml = () => {
    
 }
 
-export default Fetchpopupshtml
+export default FetchpopupRules

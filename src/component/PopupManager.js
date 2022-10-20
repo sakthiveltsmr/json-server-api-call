@@ -23,7 +23,7 @@ const PopupManager = () => {
             case "Coupon":
                return Coupon
             default:
-                return ()=> null
+                return _ => null
         }
     }
 

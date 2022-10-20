@@ -1,6 +1,6 @@
 // import { Action } from "../campain/Action";
 import useStore from "../store";
-import {Action} from "../campain/Action2"
+import {Action} from "../campain/Action"
 
 const Welcome = ({type,show}) => {
     const Rule=useStore((state)=>state.Rules)
