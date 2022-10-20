@@ -1,4 +1,4 @@
-import {Action} from "../campain/Action2"
+import {Action} from "../campain/Action"
 import useStore from "../store";
 
 const Addtocart = ({type,show}) => {
