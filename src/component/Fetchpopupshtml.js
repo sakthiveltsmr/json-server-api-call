@@ -2,10 +2,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import useStore from "../store";
 import Rules from "./Rules"
+import Popper from "../popper"
+import { map } from "lodash";
 
 const Fetchpopupshtml = () => {
+  
 
-  // const [html,setHtml]=useState([])
+  const Rule=useStore((state)=>state.Rules)
   const [loading,setLoading]=useState(true)
   const campain=useStore((state)=>state.campain)
   
@@ -18,9 +21,10 @@ const Fetchpopupshtml = () => {
 
       if(campain.event){
 
-        const result =await axios.get(`http://localhost:3004/Event/${campain.event}`)
+        const result =await axios.get(`http://localhost:3004/CampainRules/${campain.event}`)
         
         setRule(result.data)
+        // Rules()
         setLoading(false)
       }
     } catch (error) {
@@ -28,6 +32,16 @@ const Fetchpopupshtml = () => {
     }
     
   }
+
+  // const handelLoad=()=>{
+  //   return map(Rule.Rules,(item,i)=>{
+      
+  //     return(<>
+  //     {/* <Popper type={item.position} id={i} html={item._html} show={item.active}/> */}
+  //     <Rules/>
+  //     </> )
+  //  })
+  //  }
 
   useEffect(()=>{
      

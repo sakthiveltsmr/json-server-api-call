@@ -1,48 +1,129 @@
+
 import map from"lodash/map"
+import { useEffect, useState } from "react"
+
 
 import { PopupsManager } from "../PopupsManager"
-
+// import {PopupsManager}from "../NewCampain/PopupManager"
+// import {Action} from "../campain/Action"
 import useStore from "../store"
+
 const Rules = () => {
+    const [popup,setPopup]=useState({
+        // Exitintent:false,
+        // Welcome:false,
+        // Banner:false,
+        // Coupon:false,
+        // Addtocart:false
+      })
+
+     
 
  const Rule=useStore((state)=>state.Rules)
-   
- const CampaignRules=(type)=>{
+ 
+// //  const Exit=useStore((state)=>state.setExit)
+//  const CampaignRules=(type)=>{
 
-       switch(type)
-        {
-        case "Exitpopups":
-             return PopupsManager.OnExitIntent 
-        case "Banner":
-            return PopupsManager.OnBannerIntent
-        case "Welcomepopups":
-            return PopupsManager.OnWelcomeIntent 
-        case "Addtocart":
-            return PopupsManager.OnAddtocartIntent  
-                
-        default:
-             return null
-        }
-   
-    //    })
+//     console.log("type", type)
+//     switch(type)
+//     {
+//     case "Exitintent":{
+
+//         let rules = {...popup, Exitintent: true};
+
+//         console.log("rules", rules);
+
+//         let result =  PopupsManager.OnExitIntent({onRun:()=>{
+//             // eslint-disable-next-line no-unused-expressions
+//             rules
+//         }});
+//         if(result){
+//             console.log("jkkkkkkkkkkkkkkkkkkk")
+//             setPopup(rules)
+//         }
+//         console.log("popup", popup);
+
+//         break;
+//     }
+//     case "Banner":
+//         return PopupsManager.OnBannerIntent({onRun:()=>{
+//             // setPopup({...popup,type:true})
+//         }});
+//     case "Welcome":
+//         return PopupsManager.OnWelcomeIntent({onRun:()=>{
+//             // setPopup({...popup,type:true})
+//         }}); 
+//     case "Addtocart":
+//         return PopupsManager.OnAddtocartIntent({onRun:()=>{
+//             // setPopup({...popup,type:true})
+//         }});
+            
+//     default:
+//          return null
+//     };
+
+      
+//     //    })
         
        
-     }
-   
- const renderCampaignRules=()=>{
-    return map(Rule.events,(item,i)=>{
-        let CampainRules=CampaignRules(item.type)
-        return <CampainRules key={i} type={item.type} show={item.active}/>
-    })
- }
-  return(
-    <div>
-        { Rule.length!==0 ? <div>{renderCampaignRules()}</div>:null}
-    
-    </div>
-              
-    )  
-  
-}
+//      };
 
-export default Rules
+useEffect(() => {
+    return map(Rule.Rules,(item,i)=>{
+        setPopup(popup[item.type]=false)
+
+    switch(item.type)
+    {
+    case "Exitintent":{
+        
+        return PopupsManager.OnExitIntent({onRun:()=>{
+            let a = {...popup}
+            a[item.type] = true;
+            setPopup({...a})
+           
+    }})
+    
+        
+    }
+    case "Banner":
+        return PopupsManager.OnBannerIntent({onRun:()=>{
+            setPopup({...popup,Banner:true})
+        }});
+    case "Welcome":
+        return PopupsManager.OnWelcomeIntent({onRun:()=>{
+            // setPopup({...popup,type:true})
+        }}); 
+    case "Addtocart":
+        return PopupsManager.OnAddtocartIntent({onRun:()=>{
+            // setPopup({...popup,type:true})
+        }});
+            
+    default:
+         return null
+    };
+
+   
+        })
+
+     }, [])
+
+     useEffect( ()=>{
+        console.log("popup",popup)
+     }, [popup])
+     
+   
+   
+//  const renderCampaignRules=()=>{
+//     return map(Rule.Rules,(item,i)=>{
+//         let CampainRules=CampaignRules(item.type);
+//         console.log("pppppppppppppp", popup)
+//         return CampainRules()
+//     });
+//  };
+  return null
+    
+   
+  
+};
+
+export default Rules;
