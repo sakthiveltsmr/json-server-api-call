@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Modal from './modal';  
 import SlideIn from './slideIn';
 import FloatingBar from './FloatingBar';
@@ -7,28 +7,29 @@ import PopupTop from "./popperTop"
 
 
 const Popper = (props) => {
-   const  getPopper=(type)=>{
-        switch(type){
+  
+   const  getPopper=(props)=>{
+        switch(props.type){
             case 'popup':
-                return Modal; 
+                return <Modal html={props.html} show={props.show} event={props.id}/>; 
             case 'slide-in':
-                return SlideIn;
+                return <SlideIn html={props.html} show={props.show} event={props.id}/>;
             case 'floating-bar-bottom':
-                return FloatingBar;
+                return <FloatingBar html={props.html} show={props.show} event={props.id}/>;
             case 'floating-bar-top':
-                return TopBar;
+                return <TopBar html={props.html} show={props.show} event={props.id}/>;
             case 'popup-top':
-                return PopupTop
+                return <PopupTop html={props.html} show={props.show} event={props.id}/>
             default:
                 return _ => null;
         }
     }
-   const Position=()=>{
-     let Displayposition=getPopper(props.type)
-     return <Displayposition html={props.html} show={props.show}/>
-   }
+  
+    
+   
 
-  return Position()
+  return <>{getPopper(props)}</>
+    
 }
 
 

@@ -1,89 +1,46 @@
+import {Exitintent} from "./Event/Exit"
+import {Banner}from "./Event/Banner"
+import {Coupon}from "./Event/Coupon"
+import {Addtocart}from "./Event/Addtocart"
+import {Welcome} from "./Event/Welcome"
 
-// import { Action } from "./campain/Action"
 
 
-export const PopupsManager={
+export class PopupManager{
 
-  
-    OnExitIntent:(props)=>{
-        console.log("props",props)
-        const events=[];
-        events.push(props)
-        document.addEventListener("mouseout",(e)=>{
-            
-            if(e.clientY<=0){
-             
-                events.forEach(event => {
+   
+   
+   
 
-                   
-                   return event.onRun();
-                  })
-            
-         }
-        
-           
-            
-    })
-        return true;
-    },
+    constructor(type,config){
 
-    OnWelcomeIntent:({show, type})=>{
-
-       
-
-        document.addEventListener("mouseenter",()=>{
-           
-
-            if(!show){
-               
-               
+        switch(type){
+            case "Exitintent":{
+                  this.Exit=new Exitintent()
+               return this.Exit.Register(config)
             }
-            
-        })
-    },
-
-    OnBannerIntent:({show,type})=>{
-
-       
-       if(!show){
-        
-        
-       }
-    },
-
-    OnAddtocartIntent:({show,type})=>{
-
-       
-
-        let add=document.getElementById('addcart');
-        add.addEventListener("click",()=>{
-      
-
-            if(!show){
-               
-
-                 
+            case "Banner":{
+                  this.Banner=new Banner()
+                return this.Banner.Register(config)
             }
-        })
-    },
-
-    OnCouponIntent:({show, type})=>{
-       
-        document.addEventListener("mouseenter",()=>{
-        console.log("OnCouponIntent");
-
-            setTimeout(()=>{
-                if(!show){
-                    // const event= map(Rule.events,(item)=>{
-                    //     return item.type === type ? { ...item, active:true } : item
-                    //     })
-                        
-                    //   setRule({...Rule,events:event})  
+            case "Welcome":
+                {
+                    this.Welcome=new Welcome()
+                    return this.Welcome.Register(config)
                 }
+            case "Addtocart":{
+                this.Addtocart=new Addtocart()
+               return  this.Addtocart.Register(config) 
+            }
                 
-            },5000)
-        })
+            case "Coupon":{
+                this.Coupon=new Coupon()
+                return this.Coupon.Register(config)
+            }
+               
+            default:
+               return ()=>null
+
+        }
     }
-
-
 }

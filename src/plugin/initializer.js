@@ -4,7 +4,11 @@ if (!document.getElementById("campaign-app")) {
     document.body.appendChild(div);
   } 
 
-  window.campain={
+
+if(!window.campainrabbit){
+  window.campainrabbit={
     app_id:1,
     domain:window.location.href
   }
+}
+  

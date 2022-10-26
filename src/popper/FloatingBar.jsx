@@ -8,7 +8,7 @@ import styles from './css/floatingBar';
 const FloatingBar = (props) => {
     const[show,setShow]=useState(true)
 
-    const display = (props.show&&show === true) ? { ...styles.slideInWrapper, ...styles.show } : { ...styles.slideInWrapper };
+    const display = (props.show[props.event]&&show === true) ? { ...styles.slideInWrapper, ...styles.show } : { ...styles.slideInWrapper };
 
     return (
         <div style={display}>

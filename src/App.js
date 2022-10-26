@@ -1,7 +1,7 @@
 import axios from "axios";
 
 import { useEffect, useState} from "react";
-import Fetchpopupshtml from "./component/Fetchpopupshtml";
+import Fetchpopup from "./component/Fetchpopups";
 import useStore from "./store";
 
 
@@ -15,7 +15,7 @@ function App(props) {
    
   const fetch=async()=>{
     try {
-        let result=await axios.get(`http://localhost:3004/popups/${window.campain.app_id}`);
+        let result=await axios.get(`http://localhost:3004/popups/${window.campainrabbit.app_id}`);
         console.log(result.data)
         setCampain(result.data)
         setLoading(false)
@@ -33,7 +33,7 @@ useEffect(()=>{
 
 return (
   <>
-  {!loading ? <> <Fetchpopupshtml/> </>:null}
+  {!loading ? <> <Fetchpopup/> </>:null}
   </>
 )
 }

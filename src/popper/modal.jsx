@@ -2,18 +2,13 @@ import React, { useState } from 'react';
 
 import styles from './css/modal';
 
-import useStore from '../store';
+// import useStore from '../store';
 
 
 const Modal = (props) => {
     const[show,setShow]=useState(true)
-    const Exit=useStore((state)=>state.exit)
-
-    //console.log("Exitintent",Exit)
     
-
-   
-    let display = (Exit&&show=== true) ? { ...styles.crModal, ...styles.crShowModal } : { ...styles.crModal };
+    let display = (props.show[props.event]&&show=== true) ? { ...styles.crModal, ...styles.crShowModal } : { ...styles.crModal };
 
     return (
         <div style={display}>

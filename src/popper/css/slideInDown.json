@@ -24,7 +24,7 @@
       "top": "-900px"
     },
     "show": {
-      "top": 0
+      "top": "10px"
     },
     "slideIn ": {
       "animation": "slide-in 0.5s forwards",
