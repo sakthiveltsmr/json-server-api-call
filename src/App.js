@@ -16,7 +16,6 @@ function App(props) {
   const fetch=async()=>{
     try {
         let result=await axios.get(`http://localhost:3004/popups/${window.campainrabbit.app_id}`);
-        console.log(result.data)
         setCampain(result.data)
         setLoading(false)
      } catch (error) {

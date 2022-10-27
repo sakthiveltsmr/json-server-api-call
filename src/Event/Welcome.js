@@ -10,7 +10,10 @@ export class Welcome{
     Eventcall(){
         document.addEventListener("mouseenter",()=>{
             this.event.forEach(event => { 
-                return event.onRun();
+                // setTimeout(() => {
+                   return event.onRun();
+                // }, 5000);
+               
                }) 
             
         })

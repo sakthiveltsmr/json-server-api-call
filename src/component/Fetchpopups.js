@@ -18,9 +18,7 @@ const Fetchpopups = () => {
       if(campain.event){
 
         const result =await axios.get(`http://localhost:3004/CampainRules/${campain.event}`)
-        
         setRule(result.data)
-        // Rules()
         setLoading(false)
       }
     } catch (error) {

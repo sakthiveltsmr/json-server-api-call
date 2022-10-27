@@ -8,46 +8,86 @@ import useStore from '../store'
 
 const Rules = () => {
   const [popup, setPopup] = useState({})
+  
+
+  const popupManager = new PopupManager()
 
   const Rule = useStore((state) => state.Rules)
 
-  useEffect(() => {
-    map(Rule.Rules, (item) => {
-      setPopup({...popup,[item.id] : false})
+  
+  //  useEffect(()=>{
+  //   map(Rule.Rules, (item) => {
+  //     setPopup({ ...popup,[item.id]: false })
+     
+  //   })
+  //  },[])
+
+
+  const handelLoad = () => {
+    return map(Rule.Rules, (item, i) => {
+      return (
+        <div>
+          <Popper
+            key={i}
+            type={item.position}
+            show={popup}
+            html={item._html}
+            id={item.id}
+          />
+        </div>
+      )
     })
-   
-  }, [])
-  
- const handelLoad=()=>{
-   return map(Rule.Rules,(item,i)=>{
-        return (<div>
-             <Popper type={item.position} show={popup} html={item._html} id={item.id}/>
-             </div>)  
-      })
- }
+  }
+
+  useEffect(() => {
     
-  useEffect(()=>{
-   
-      map(Rule.Rules, (item, i) => {
-        new PopupManager(item.type,{
-           onRun:()=>{
-             if(!popup[item.id]){
-              setPopup({...popup,[item.id]:true})
-             }
-            else{
-              setPopup({...popup,[item.id]:false})
-            }  
-         }
-      })
-      })
+    let newPopup=JSON.parse(JSON.stringify(popup))
     
+    for (let index = 0; index < Rule.Rules.length; index++) {
+      
+      const item = Rule.Rules[index];
+      popupManager.register(
+        item.type,{
+          onRun: () => {
+          if (!popup[item.id]) {
+            newPopup={...newPopup,[item.id]:true}
+            setPopup({...newPopup})
+          } 
+      
+      }
+    })
+    }
+    
+    // map(Rule.Rules, (item, i) => {
+    //   // setPopup({...popup,[item.type]:false})
+    //    popupManager.register(
+    //         item.type,{
+    //           onRun: () => {
+              
+    //           if (!popup[item.id]) {
+    //             newPopup={...newPopup,[item.id]:true}
+    //           } 
+          
+    //       }
+    //     })
+          
+        
+         
+    //     })
+    },[popup])
+        
 
- },[popup])//error
+    useEffect(() => {
+      console.log(".........popup",popup)
+    }, [popup])
+      
+       
+        
+      
   
- 
+  //error
 
-
-  return( <div>{handelLoad()}</div> )
+  return <div>{handelLoad()}</div>
 }
 
 export default Rules

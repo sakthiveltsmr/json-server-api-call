@@ -5,11 +5,36 @@ export class Exitintent {
     this.event.push(config)
     this.Eventcall()
   }
-  Eventcall() {
-    document.addEventListener('mouseout', (e) => {
+
+  // a = {
+  //   "qq": true,
+  //   "aa": true
+  // }
+
+  // configs = [
+  //   {
+  //     onRun: function() {
+  //       return { 1: true, 2: false }
+  //     }
+  //   },
+  //   {
+  //     onRun: function() {
+  //       return { 1: false, 2: true }
+  //     }
+  //   }
+  // ]
+
+  //event.push(config)
+
+   Eventcall() {
+
+
+    document.addEventListener('mouseout',(e) => {
       if (e.clientY <= 0) {
-        this.event.forEach((e) => {
-          return e.onRun()
+
+       this.event.forEach((events)=> {
+
+           events.onRun()
         })
       }
     })

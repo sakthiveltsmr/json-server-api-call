@@ -7,7 +7,7 @@ export class Banner {
   }
 
   Eventcall() {
-    document.addEventListener("scroll",()=>{
+    document.addEventListener("mousedown",()=>{
         this.event.forEach((event) => {
             return event.onRun()
           })
