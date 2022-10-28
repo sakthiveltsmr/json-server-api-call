@@ -4,6 +4,7 @@ import SlideIn from './slideIn';
 import FloatingBar from './FloatingBar';
 import TopBar from './topBar';
 import PopupTop from "./popperTop"
+import PopperRight from './popperRight';
 
 
 const Popper = (props) => {
@@ -19,7 +20,9 @@ const Popper = (props) => {
             case 'floating-bar-top':
                 return <TopBar html={props.html} show={props.show} event={props.id}/>;
             case 'popup-top':
-                return <PopupTop html={props.html} show={props.show} event={props.id}/>
+                return <PopupTop html={props.html} show={props.show} event={props.id}/>;
+            case 'slide-in-right':
+                return <PopperRight html={props.html} show={props.show} event={props.id}/>;
             default:
                 return _ => null;
         }

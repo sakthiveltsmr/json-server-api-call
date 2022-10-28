@@ -2,7 +2,7 @@
   "slideInWrapper": {
     "background": "transparent",
     "position": "fixed",
-    "right": "15px",
+    "left": "15px",
     "height": "auto",
     "zIndex": "777777777",
     "border": "0px",

@@ -52,10 +52,19 @@
              {  "id":5,
                 "active":false,
                 "position":"slide-in",
+                "type":"Coupon",
+                "_html":"<div id=\"iapg\" style=\"alignItem:center; top:0px; width:300px; height:100px; border:3px solid #00FF00;\"> <h1 style=\"color:#30F;\"align=\"center\">Coupon popups</h1> <p style=\"font-family:Arial, Helvetica, sans-serif; align:left; color:#F00;\">40% Diwali offer</p> </div>"
+                
+             },
+              { 
+                 "id":6,
+                "active":false,
+                "position":"slide-in-right",
                 "type":"Exitintent",
-                "_html":"<div><h2>Exit Popups</h2></div>"
+                "_html":"<div id=\"iapg\" style=\"alignItem:center; top:0px; width:300px; height:100px; border:3px solid #00FF00;\"> <h1 style=\"color:#30F;\"align=\"center\">Exit popups</h1> <p style=\"font-family:Arial, Helvetica, sans-serif; align:left; color:#F00;\">40% Diwali offer</p> </div>"
                 
              }
+             
              
             ]
             

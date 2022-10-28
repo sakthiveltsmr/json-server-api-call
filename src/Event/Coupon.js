@@ -7,10 +7,13 @@ export class Coupon {
   }
 
   Eventcall() {
-    document.addEventListener('mouseenter', () => {
-      this.event.forEach((event) => {
-        return event.onRun()
+    document.addEventListener('mouseup', () => {
+    this.event.forEach((event) => {
+        setTimeout(()=>{
+          return event.onRun()
+        },5000)
       })
+      
     })
   }
 }

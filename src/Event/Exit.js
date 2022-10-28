@@ -6,26 +6,6 @@ export class Exitintent {
     this.Eventcall()
   }
 
-  // a = {
-  //   "qq": true,
-  //   "aa": true
-  // }
-
-  // configs = [
-  //   {
-  //     onRun: function() {
-  //       return { 1: true, 2: false }
-  //     }
-  //   },
-  //   {
-  //     onRun: function() {
-  //       return { 1: false, 2: true }
-  //     }
-  //   }
-  // ]
-
-  //event.push(config)
-
    Eventcall() {
 
 
