@@ -32,7 +32,8 @@
                 "active":false,
                 "position":"floating-bar-top",
                 "type":"Banner",
-                "_html":"<div><h2>Banner Popups</h2></div>"
+                "_html":"<div id=\"iapg\" style=\"alignItem:center; top:0px; border:3px solid #00FF00;\"> <h1 style=\"color:#000;\"align=\"center\">Banner popups</h1> <p style=\"font-family:Arial, Helvetica, sans-serif; align:left; color:#F00;\">40% Diwali offer</p> </div>"
+                
                 
              },
              { 
