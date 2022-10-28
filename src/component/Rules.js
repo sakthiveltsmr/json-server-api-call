@@ -8,23 +8,13 @@ import useStore from '../store'
 
 const Rules = () => {
   const [popup, setPopup] = useState({})
-  
 
   const popupManager = new PopupManager()
 
-  const Rule = useStore((state) => state.Rules)
-
-  
-  //  useEffect(()=>{
-  //   map(Rule.Rules, (item) => {
-  //     setPopup({ ...popup,[item.id]: false })
-     
-  //   })
-  //  },[])
-
+  const campainintent = useStore((state) => state.campainintent)
 
   const handelLoad = () => {
-    return map(Rule.Rules, (item, i) => {
+    return map(campainintent.Rules, (item, i) => {
       return (
         <div>
           <Popper
@@ -40,52 +30,20 @@ const Rules = () => {
   }
 
   useEffect(() => {
-    
-    let newPopup=JSON.parse(JSON.stringify(popup))
-    
-    for (let index = 0; index < Rule.Rules.length; index++) {
-      
-      const item = Rule.Rules[index];
-      popupManager.register(
-        item.type,{
-          onRun: () => {
-          if (!popup[item.id]) {
-            newPopup={...newPopup,[item.id]:true}
-            setPopup({...newPopup})
-          } 
-      
-      }
-    })
-    }
-    
-    // map(Rule.Rules, (item, i) => {
-    //   // setPopup({...popup,[item.type]:false})
-    //    popupManager.register(
-    //         item.type,{
-    //           onRun: () => {
-              
-    //           if (!popup[item.id]) {
-    //             newPopup={...newPopup,[item.id]:true}
-    //           } 
-          
-    //       }
-    //     })
-          
-        
-         
-    //     })
-    },[popup])
-        
+    let newPopup = JSON.parse(JSON.stringify(popup))
 
-    useEffect(() => {
-      console.log(".........popup",popup)
-    }, [popup])
-      
-       
-        
-      
-  
-  //error
+    map(campainintent.Rules, (item, i) => {
+      popupManager.register(item.type, {
+        onRun: () => {
+          if (!popup[item.id]) {
+            newPopup = { ...newPopup, [item.id]: true }
+            setPopup({ ...newPopup })
+          }
+        },
+      })
+    })
+    
+  }, [popup])
 
   return <div>{handelLoad()}</div>
 }

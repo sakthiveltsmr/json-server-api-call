@@ -8,7 +8,7 @@ const Fetchpopups = () => {
   const [loading,setLoading]=useState(true)
   const campain=useStore((state)=>state.campain)
   
-  const setRule=useStore((state)=>state.setRules)
+  const setRule=useStore((state)=>state.setCampainintent)
   
   const getRules=async()=>{
 
