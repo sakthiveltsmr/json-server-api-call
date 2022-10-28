@@ -35,6 +35,7 @@ const Rules = () => {
     map(campainintent.Rules, (item, i) => {
       popupManager.register(item.type, {
         onRun: () => {
+          
           if (!popup[item.id]) {
             newPopup = { ...newPopup, [item.id]: true }
             setPopup({ ...newPopup })
