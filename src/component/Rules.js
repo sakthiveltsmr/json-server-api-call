@@ -43,6 +43,7 @@ const Rules = () => {
       })
     })
     
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [popup])
 
   return <div>{handelLoad()}</div>
