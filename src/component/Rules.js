@@ -3,9 +3,8 @@ import { useEffect, useState } from 'react'
 
 import { PopupManager } from '../PopupsManager'
 import Popper from '../popper'
-
 import useStore from '../store'
-
+import { Action } from '../campain/Action'
 const Rules = () => {
   const [popup, setPopup] = useState({})
 
@@ -34,12 +33,20 @@ const Rules = () => {
 
     map(campainintent.Rules, (item, i) => {
       popupManager.register(item.type, {
-        onRun: () => {
-          
-          if (!popup[item.id]) {
-            newPopup = { ...newPopup, [item.id]: true }
-            setPopup({ ...newPopup })
+        id:item.id,
+
+        onRun: async(datas) => {
+            //  Action(item.type,popup,setPopup,item.id)
+            let data=await Action(item.id,datas)
+        
+          if(data[0]){
+            if (!popup[item.id]) {
+              newPopup = { ...newPopup, [item.id]: true }
+              setPopup({ ...newPopup })
+            }
+
           }
+          
         },
       })
     })

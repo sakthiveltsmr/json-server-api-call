@@ -12,6 +12,8 @@ export class PopupManager {
    Welcome=new Welcome()
 
    register(type,config){
+    
+    
        switch(type){
         case "Exitintent":
             return this.Exit.Register(config)
