@@ -5,12 +5,7 @@ export class Exitintent {
   timeout
   currentTime=new Date()
  
- constructor(){
-  // console.log("currentTime",this.currentTime)
-  this.state = {
-    counter: 0
- }
-}
+
   Register(config) {
     this.event.push(config)
     this.Eventcall()
