@@ -9,6 +9,7 @@ export class Addtocart {
   }
 
   Eventcall(){
+    
     let add=document.getElementById('addcart')
     this.event.forEach((event) => {
       const result=Rules.find(e=>e.id===event.id)
