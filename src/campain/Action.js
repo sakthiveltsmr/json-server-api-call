@@ -6,11 +6,6 @@ import { Engine } from 'json-rules-engine'
 
 export const Action = async (id,datas) => {
   
-  // const a = {
-  //   stay,
-  //   currentUrl,
-  // }
-  // console.log("campainrules",Campainrules)
   let rules = new Engine()
 
   map(Campainrules, (i) => {
