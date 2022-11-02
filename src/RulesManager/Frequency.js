@@ -2,7 +2,7 @@ export class Frequency{
 
     Register(rule,facts,id){
         this.event={rule,facts,id}
-       console.log("events",rule);
+       console.log("--------------rule,facts,id",rule,facts,id);
         this.EventCall()
     }
     

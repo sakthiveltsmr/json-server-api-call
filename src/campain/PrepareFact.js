@@ -18,10 +18,9 @@ Eventcall(final,id){
        return fact
     })
 
-  
-
+    window.localStorage.setItem("fact_"+id,JSON.stringify(data))
     Object.values(data).map((rule)=>{
-        window.localStorage.setItem("fact_"+id,JSON.stringify(rule))
+       
         return this.rulemanager.Register(rule,final,id)
     })
    

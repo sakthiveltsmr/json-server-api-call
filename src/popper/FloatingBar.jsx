@@ -9,14 +9,18 @@ const FloatingBar = (props) => {
     const[show,setShow]=useState(true)
     const[count,setCount]=useState(1)
     const frequency=new Frequency()
-    const rule=JSON.parse(window.localStorage.getItem('fact_'+props.id))
+  
+
+    const rule=JSON.parse(window.localStorage.getItem('fact_'+props.event))
+    
    let facts={}
     const display = (props.show[props.event]&&show === true) ? { ...styles.slideInWrapper, ...styles.show } : { ...styles.slideInWrapper };
      const hidden=()=>{
       setCount(count+1);
-      window.localStorage.setItem(props.event,count+1);
+      window.localStorage.setItem(props.event,count);
       setShow(false);
-      frequency.Register(rule,facts,props.id)
+     
+      frequency.Register(rule,facts,props.event)
      
      }
     return (
