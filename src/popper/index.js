@@ -6,7 +6,6 @@ import TopBar from './topBar';
 import PopupTop from "./popperTop"
 import PopperRight from './popperRight';
 
-
 const Popper = (props) => {
   
    const  getPopper=(props)=>{

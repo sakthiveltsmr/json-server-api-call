@@ -1,0 +1,48 @@
+[
+    {
+        "Rule":{
+            "all":[
+                {
+                    "fact":"spent_on_page",
+                    "operator":"greaterThanInclusive",
+                    "value":4
+                },
+                {
+                    "fact":"spent_on_site",
+                    "operator":"greaterThanInclusive",
+                    "value":3
+                },
+                {
+                    "fact":"frequency",
+                    "operator":"lessThanInclusive",
+                    "value":2
+                },
+                {
+                    "fact":"currentPage",
+                    "operator":"equals",
+                    "value":"http://localhost:3000/"
+                },
+                {
+                    "fact":"visitedURL",
+                    "operator":"equals",
+                    "value":"http://localhost:3000/1"
+                },
+                {
+                    "fact":"cart_value",
+                    "operator":"greaterThanInclusive",
+                    "value":2
+                },
+                {
+                    "fact":"exclude_page_visitor",
+                    "operator":"equals",
+                    "value":"http://localhost:3000/"
+
+                }
+            ]
+
+        }
+
+}
+    
+]
+   

@@ -5,6 +5,7 @@ import { PopupManager } from '../PopupsManager'
 import Popper from '../popper'
 import useStore from '../store'
 import { Action } from '../campain/Action'
+import Rule from "../Rules.json"
 const Rules = () => {
   const [popup, setPopup] = useState({})
 
@@ -32,20 +33,23 @@ const Rules = () => {
     let newPopup = JSON.parse(JSON.stringify(popup))
 
     map(campainintent.Rules, (item, i) => {
-      popupManager.register(item.type, {
-        id:item.id,
+      let rule=Rule.find((r)=>r.id===item.id)
 
-        onRun: async(datas) => {
-            //  Action(item.type,popup,setPopup,item.id)
-            let data=await Action(item.id,datas)
-        
-          if(data[0]){
-            if (!popup[item.id]) {
-              newPopup = { ...newPopup, [item.id]: true }
-              setPopup({ ...newPopup })
-            }
-
-          }
+      popupManager.register(item.type,rule,item.id, {
+          onRun:(fact) => {
+           
+            let Timer=setInterval(async()=>{
+              let data=await Action(item.id,fact)
+              if(data[0]){
+                clearInterval(Timer)
+                if (!popup[item.id]) {
+                  newPopup = { ...newPopup, [item.id]: true }
+                  setPopup({ ...newPopup })
+                }
+                
+              }
+            },1000)
+           
           
         },
       })

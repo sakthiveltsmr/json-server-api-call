@@ -5,7 +5,7 @@ import styles from './css/slideInDown';
 
 const PopperTop = (props) => {
     const[show,setShow]=useState(true)
-
+ console.log("showaaaa",props)
     const display = (props.show[props.event]&&show === true) ? { ...styles.slideInWrapper, ...styles.show } : { ...styles.slideInWrapper };
 
     return (

@@ -1,113 +1,42 @@
 [
-  {
-    "id": 1,
-    "type": "Exitintent",
-    "Rule": {
-      "all": [
-        {
-          "fact": "stayonpage",
-          "operator": "greaterThanInclusive",
-          "value": 10
-        },
-        {
-          "fact": "currentUrl",
-          "operator": "equal",
-          "value": "http://localhost:3000/"
-        }
-      ]
-    }
-  },
-
+  
   {
     "id": 3,
     "type": "Welcome",
-    "Rule": {
-      "all": [
-        {
-          "fact": "stayonpage",
-          "operator": "greaterThanInclusive",
-          "value": 5
-        },
-        {
-          "fact": "currentUrl",
-          "operator": "equal",
-          "value": "http://localhost:3000/"
-        }
+    "Rule":{
+      "all":[
+          
+          {
+              "fact":"currentPage",
+              "operator":"equal",
+              "value":"http://localhost:3000/"
+          },
+          {
+            "fact":"spent_on_site",
+            "operator":"greaterThanInclusive",
+            "value":4
+         },
+         {
+          "fact":"spent_on_page",
+          "operator":"greaterThanInclusive",
+          "value":10
+         },
+         {
+          "fact":"visitedURL",
+          "operator":"equal",
+          "value":"http://localhost:3000/1"
+         },
+         {
+          "fact":"frequency",
+          "operator":"lessThan",
+          "value":3
+         }
+         
+        
+          
       ]
     }
-  },
-  {
-    "id": 2,
-    "type": "Banner",
-    "Rule": {
-      "all": [
-        {
-          "fact": "stayonpage",
-          "operator": "greaterThanInclusive",
-          "value": 3
-        },
-        {
-          "fact": "currentUrl",
-          "operator": "equal",
-          "value": "http://localhost:3000/"
-        }
-      ]
-    }
-  },
-  {
-    "id": 5,
-    "type": "Coupon",
-    "Rule": {
-      "all": [
-        {
-          "fact": "stayonpage",
-          "operator": "greaterThanInclusive",
-          "value": 10
-        },
-        {
-          "fact": "currentUrl",
-          "operator": "equal",
-          "value": "http://localhost:3000/"
-        }
-      ]
-    }
-  },
-  {
-    "id": 4,
-    "type": "Addtocart",
-    "Rule": {
-      "all": [
-        {
-          "fact": "stayonpage",
-          "operator": "greaterThanInclusive",
-          "value": 5
-        },
-        {
-          "fact": "currentUrl",
-          "operator": "equal",
-          "value": "http://localhost:3000/"
-        }
-      ]
-    }
-    
-  },
-  {
-    "id": 6,
-    "type":"Exitintent",
-    "Rule": {
-      "all": [
-        {
-          "fact": "stayonpage",
-          "operator": "greaterThanInclusive",
-          "value": 5
-        },
-        {
-          "fact": "currentUrl",
-          "operator": "equal",
-          "value": "http://localhost:3000/"
-        }
-      ]
-    }
-    
   }
+  
+  
 ]
